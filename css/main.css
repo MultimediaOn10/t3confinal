@@ -27,6 +27,7 @@ body {
 	background: #ffffff url('../img/hintergrund_kachel.png');
 	font-family: arial;
 	box-shadow:inset 40px 100px 60px rgba(0,0,0,.4);
+	margin-top: 40px;
 
 }
 
@@ -56,7 +57,7 @@ body {
 }
 
 .heading {
-	height: 100px;
+	height: 160px;
 }
 
 .daytext {
@@ -71,6 +72,7 @@ body {
 
 .logo img{
 	height: 60px;
+	margin-top: 40px;
 }
 
 .sidebar {

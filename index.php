@@ -48,10 +48,11 @@ $sql_pp="Select * from programpoints left join topics on programpoints.topic_id=
 	<link rel="stylesheet" type="text/css" href="css/font.css" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 
-	<script src="js/main.js" type="text/javascript"></script>
-	<script src="js/bootstrap.js" type="text/javascript"></script>
 	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.js" type="text/javascript"></script>
 	<script src="js/html5shiv.js" type="text/javascript"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="js/main.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="container">         
@@ -82,107 +83,109 @@ $sql_pp="Select * from programpoints left join topics on programpoints.topic_id=
             	?>  
         	</div>                    
 		</div>
+		<!-- Here starts the main content-->
+		<div class="row">
+			<!-- Here is the sidebar for the bubbles-->
+			<div class="span3 sidebar">
+				<div class="bubble left-floating bubble-left" id="bubble-2">
+	          		<canvas id="canvas1" class="bubbleborder" width="240" height="200" >
+	         		 </canvas>
+	          		<div class="bubbletext bubbletext-left">
+		            	<h3 class="title title-left">Der Titel des Vortrags</h3>
+		            	<div class="speaker-name speaker-name-left">Liesa Burgey</div>
+		            	<div class="bubble-content bubble-content-left">
+		             		<p class="bubble-text bubble-text-left"> Dies ist ein Satz in welchem der Inhalt beschrieben ist.</p>
+		            	</div>
+	            		<div class="button button-left"> Info »</div>
+	          		</div>
+	        	</div>
+	    	</div>
 
-		<!-- Here is the sidebar for the bubbles-->
-		<div class="span3 sidebar">
-			<div class="bubble left-floating bubble-left" id="bubble-2">
-          		<canvas id="canvas1" class="bubbleborder" width="240" height="200" >
-         		 </canvas>
-          		<div class="bubbletext bubbletext-left">
-	            	<h3 class="title title-left">Der Titel des Vortrags</h3>
-	            	<div class="speaker-name speaker-name-left">Liesa Burgey</div>
-	            	<div class="bubble-content bubble-content-left">
-	             	<p class="bubble-text bubble-text-left"> Dies ist ein Satz in welchem der Inhalt beschrieben ist.</p>
-	            </div>
-            	<div class="button button-left"> Info »</div>
-          	</div>
-        </div>
+			<!--Here is the centered content-->
+					
+			<?php	
+			$pp = mysql_query($sql_pp);
+			echo("
+			<div class=\"span6 center-content\">
+							<div class=\"row\">
+								<div class=\"span6 content-heading\">
+									<div class=\"left-floating heading-text\">
+										Business/Community Track
+									</div>
+									<div class=\"right-floating heading-text\">
+										Technical Track
+									</div>
+								</div>
+							</div>");
+			while($point = mysql_fetch_array($pp)){
+				if ($point['referent_id'] != 0){
+					$sql_ref1="SELECT firstname, lastname from referents where `id`='$point[referent_id]'";
+					$ref1 = mysql_query($sql_ref1);
+					$ref1 = mysql_fetch_array($ref1);
+				if($point['referent2_id'] != 0){
+					$sql_ref2="SELECT firstname, lastname from referents where `id`='$point[referent2_id]'";
+					$ref2 = mysql_query($sql_ref2);
+					$ref2 = mysql_fetch_array($ref2);
+					$referent="($ref1[firstname] $ref1[lastname], $ref2[firstname] $ref2[lastname])";
+					}
+				else{
+					$referent="($ref1[firstname] $ref1[lastname])";
+				}
+			}
+			else{
+				$referent="";
+			}
+				if($point['topic_id']=="7"){
+			        echo("<div class=\"row\">"); 
+			        echo("<div class=\"span6 content-heading bordered-line\">");
+			        echo("<div class=\"left-floating heading-text\" id=\"".$point['id']."\">");
+					echo($point['title']);
+			        echo(" </div>
+			               </div>
+			               </div>");
+			                                          
+			    }
+			    elseif($point['column']=="1"){
+			        echo(" <div class=\"row\">");
+			        echo("<div class=\"span6\">");
+			        echo("<div class=\"keynote-time\">");
+			        echo(substr($point['start_time'],0,5)."-<br/>".substr($point['end_time'],0,5));
+			        echo("</div>");
+			        echo("<div class=\"keynote-track ".$point['color']."-track\" id=\"".$point['id']."\">");
+			        echo("<div class=\"track-title\">".$point['title']."</div><div class=\"track-speaker\">".$referent."</div>");
+			                                                      
+			        echo("</div>
+			        </div>
+			        </div>");
+			    }
+			    elseif($point['column']=="2" && $point['subcolumn']=="1"){
+			        echo(" <div class=\"row\">
+			            <div class=\"span6\">
+			            <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['id']."\">
+						<div class=\"track-title\">".$point['title']."</div> <div class=\"track-speaker\">".$referent."</div>							
+			            </div>
+						<div class=\"left-floating middle-field first-field\">
+										".substr($point['start_time'],0,5)."-<br/>".substr($point['end_time'],0,5)." 
+									</div>");
+			                                         
+			    }
+			    elseif($point['column']=="2" && $point['subcolumn']=="2"){                                          
+			        echo(" <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['id']."\">
+										<div class=\"track-title\">".$point['title']."</div><div class=\"track-speaker\">".$referent."</div>
+										
+			                                                    </div>
+			                                                    </div>
+			                                                    </div>");
+			                                           // echo ("<font color=\"#FF0000\">Vortrag rechte Spalte</font>");
+			                                        }
+			                                  //  print_r($value);
+			                                    //exit;
+			                                    
+			                                 //   echo ("</div></div>");
+			                                    
+			                                }
 
-<!--Here is the centered content-->
-		
-<?php	
-$pp = mysql_query($sql_pp);
-echo("
-<div class=\"span6 center-content\">
-				<div class=\"row\">
-					<div class=\"span6 content-heading\">
-						<div class=\"left-floating heading-text\">
-							Business/Community Track
-						</div>
-						<div class=\"right-floating heading-text\">
-							Technical Track
-						</div>
-					</div>
-				</div>");
-while($point = mysql_fetch_array($pp)){
-	if ($point['referent_id'] != 0){
-		$sql_ref1="SELECT firstname, lastname from referents where `id`='$point[referent_id]'";
-		$ref1 = mysql_query($sql_ref1);
-		$ref1 = mysql_fetch_array($ref1);
-	if($point['referent2_id'] != 0){
-		$sql_ref2="SELECT firstname, lastname from referents where `id`='$point[referent2_id]'";
-		$ref2 = mysql_query($sql_ref2);
-		$ref2 = mysql_fetch_array($ref2);
-		$referent="($ref1[firstname] $ref1[lastname], $ref2[firstname] $ref2[lastname])";
-		}
-	else{
-		$referent="($ref1[firstname] $ref1[lastname])";
-	}
-}
-else{
-	$referent="";
-}
-	if($point['topic_id']=="7"){
-        echo("<div class=\"row\">"); 
-        echo("<div class=\"span6 content-heading bordered-line\">");
-        echo("<div class=\"left-floating heading-text\" id=\"".$point['id']."\">");
-		echo($point['title']);
-        echo(" </div>
-               </div>
-               </div>");
-                                          
-    }
-    elseif($point['column']=="1"){
-        echo(" <div class=\"row\">");
-        echo("<div class=\"span6\">");
-        echo("<div class=\"keynote-time\">");
-        echo(substr($point['start_time'],0,5)."-<br/>".substr($point['end_time'],0,5));
-        echo("</div>");
-        echo("<div class=\"keynote-track ".$point['color']."-track\" id=\"".$point['id']."\">");
-        echo("<div class=\"track-title\">".$point['title']."</div><div class=\"track-speaker\">".$referent."</div>");
-                                                      
-        echo("</div>
-        </div>
-        </div>");
-    }
-    elseif($point['column']=="2" && $point['subcolumn']=="1"){
-        echo(" <div class=\"row\">
-            <div class=\"span6\">
-            <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['id']."\">
-			<div class=\"track-title\">".$point['title']."</div> <div class=\"track-speaker\">".$referent."</div>							
-            </div>
-			<div class=\"left-floating middle-field first-field\">
-							".substr($point['start_time'],0,5)."-<br/>".substr($point['end_time'],0,5)." 
-						</div>");
-                                         
-    }
-    elseif($point['column']=="2" && $point['subcolumn']=="2"){                                          
-        echo(" <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['id']."\">
-							<div class=\"track-title\">".$point['title']."</div><div class=\"track-speaker\">".$referent."</div>
-							
-                                                    </div>
-                                                    </div>
-                                                    </div>");
-                                           // echo ("<font color=\"#FF0000\">Vortrag rechte Spalte</font>");
-                                        }
-                                  //  print_r($value);
-                                    //exit;
-                                    
-                                 //   echo ("</div></div>");
-                                    
-                                }
-
-?>
+			?>
 
 
 			<div class="row">
@@ -197,7 +200,7 @@ else{
 				</div>
 			</div>");
 
-<!--This is the right sidecontent (for the bubbles)-->
+			<!--This is the right sidecontent (for the bubbles)-->
 			<div class="span3 sidebar">
 				<div class="bubble left-floating bubble-right" id="bubble-1">
 					<canvas id="canvas2" class="bubbleborder" width="240" height="200" >
@@ -212,5 +215,6 @@ else{
 					</div>
 				</div>
 			</div>
+		</div>
 	</body>
 </html>
