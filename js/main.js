@@ -67,7 +67,7 @@ $(document).ready(function() {
     var content_height = $(".bubble-text-left").height();
     var canvas = document.getElementById('canvas1');
     var ctx = canvas.getContext('2d'); 
-    drawBubble_left(ctx, 10,60,200, content_height +65, 10);
+    drawBubble_left(ctx, 10,60,200, content_height +95, 10);
   }
 
   /* Master Function for the bubbles*/
@@ -90,16 +90,22 @@ $(document).ready(function() {
   /*global variables for bubble contents*/
   var short_description;
   var add_content;
+  var track_title;
+  var speaker_name;
 
   /*Animate the right bubbles*/  
   function Animate_Bubble_right(){
     /* remove text from button and bubble to load in the new text*/
     $(".button-right").empty();
     $(".bubble-content-right").empty();
+    $(".title-right").empty();
+    $(".speaker-right").empty();
 
     /* Add Animation to Bubble*/
     $('#bubble-1').fadeIn('600', function() {
       $(".bubble-content-right").text(short_description);
+      $(".title-right").text(track_title);
+      $(".speaker-name-right").text(speaker_name);
         
       $(".bubble-content-right").animate({ left: '+=50', height: 'show' }, 1000, function() {
         $(".bubble-content-right").css('color','#000000');
@@ -115,10 +121,15 @@ $(document).ready(function() {
     /* remove text from button and bubble to load in the new text*/
     $(".button-left").empty();
     $(".bubble-content-left").empty();
+    $(".title-left").empty();
+    $(".speaker-name-left").empty();
+
 
     /* Add Animation to Bubble*/
     $('#bubble-2').fadeIn('600', function() {
       $(".bubble-content-left").text(short_description);
+      $(".title-left").text(track_title);
+      $(".speaker-name-left").text(speaker_name);
         
       $(".bubble-content-left").animate({ left: '+=50', height: 'show' }, 1000, function() {
         $(".bubble-content-left").css('color','#000000');
@@ -159,11 +170,13 @@ $(document).ready(function() {
   };
 
   /* Placing Bubbles to the tracks */
-  $("#2").click(function(){
+  $("#3").click(function(){
     disappear_bubbles();
     var trackID = $('#2').attr('id');
     short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
     add_content = "<div class='additional-content additional-content-right'>Hallo</div>";
+    track_title = "Der beste Vortrag aller Zeiten";
+    speaker_name = "Liesa Burgey";
     $.ajax({
       async: false,
       url: "../cakephp/app/webroot/php/Ajaxrequest.php",
@@ -196,10 +209,12 @@ $(document).ready(function() {
     Animate_Bubble_right();
   });
 
-  $("#3").click(function(){
+  $("#1").click(function(){
       disappear_bubbles();
       short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
       add_content = "<div class='additional-content additional-content-left'>Hallo</div>";
+      track_title = "Der beste Vortrag aller Zeiten";
+      speaker_name = "Liesa Burgey";
       $("#bubble-2").css('margin-top','90px');
       Animate_Bubble_left();
   });
