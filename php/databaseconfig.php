@@ -1,7 +1,7 @@
 <?php
 $mysqlhost="localhost"; 
 $mysqluser="root";
-$mysqlpwd="";
+$mysqlpwd="root";
 
 $mysqldb="t3con";
 

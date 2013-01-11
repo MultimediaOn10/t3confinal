@@ -74,10 +74,10 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
                 <?php
 				
                     if ($day=="Friday"){					
-                        echo("<a class=\"menu_active\" href=\"index.php?day=Friday\">Friday</a> / <a class=\"menu_passiv\" href=\"index.php?day=Saturday\">Saturday</a>");
+                        echo("<div class=\"menu_active\">Friday</div> <div class=\"slash\">/</div> <div class=\"menu_passiv\"><a  href=\"index.php?day=Saturday\">Saturday</a></div>");
                     } 
                     else{					
-                        echo("<a class=\"menu_passiv\" href=\"index.php?day=Friday\">Friday</a> / <a class=\"menu_active\" href=\"index.php?day=Saturday\">Saturday</a>");                                
+                        echo("<div class=\"menu_passiv\"><a  href=\"index.php?day=Friday\">Friday</a></div> <div class=\"slash\">/</div> <div class=\"menu_active\">Saturday</div>");                                
                     }                 
             	?>  
         	</div>                    
@@ -138,7 +138,7 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 			}
 				if($point['topic_id']=="7"){
 			        echo("<div class=\"row\">"); 
-			        echo("<div class=\"span6 content-heading bordered-line\" id=\"".$point['id']."\">");
+			        echo("<div class=\"span6 content-heading bordered-line\" id=\"".$point['0']."\">");
 			        echo("<div class=\"left-floating heading-text\">");
 					echo($point['title']);
 			        echo(" </div>
