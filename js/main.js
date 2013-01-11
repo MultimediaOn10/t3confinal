@@ -179,7 +179,7 @@ $(document).ready(function() {
     speaker_name = "Liesa Burgey";
     $.ajax({
       async: false,
-      url: "../cakephp/app/webroot/php/Ajaxrequest.php",
+      url: "php/ajaxrequest.php",
       //url: "../cakephp/app/Controller/AjaxrequestController.php",
       data: { trackID:trackID, action: "getmycontent" },
       type: "POST",
