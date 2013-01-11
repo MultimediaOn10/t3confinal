@@ -74,10 +74,10 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
                 <?php
 				
                     if ($day=="Friday"){					
-                        echo("<div class=\"menu_active\">Friday</div> <div class="/">/</div> <div class=\"menu_passiv\"><a  href=\"index.php?day=Saturday\">Saturday</a></div>");
+                        echo("<div class=\"menu_active\">Friday</div> <div class=\"slash\">/</div> <div class=\"menu_passiv\"><a  href=\"index.php?day=Saturday\">Saturday</a></div>");
                     } 
                     else{					
-                        echo("<div class=\"menu_passiv\"><a  href=\"index.php?day=Friday\">Friday</a></div> / <div class=\"menu_active\">Saturday</div>");                                
+                        echo("<div class=\"menu_passiv\"><a  href=\"index.php?day=Friday\">Friday</a></div> <div class=\"slash\">/</div> <div class=\"menu_active\">Saturday</div>");                                
                     }                 
             	?>  
         	</div>                    

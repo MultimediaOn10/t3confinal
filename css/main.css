@@ -321,4 +321,23 @@ body {
 	cursor: pointer;
 	
 }
+/****************************/
+/***  Day-Menu         *******/
+/****************************/
 
+.menu_active{
+	color: #ffffff;
+	float: left;
+}
+a.menu_passiv:hover{
+	color: #EC9A43;
+}
+
+.slash{
+	float: left;
+}
+
+.menu_passiv {
+	color: #666666;
+	float: left;
+}
