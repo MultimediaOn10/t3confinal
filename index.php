@@ -191,12 +191,12 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 
 			<div class="row">
 					<div class="span6">
-						<div class="legend" id="legend-yellow">Business and <br/>Best Practices</div>
-						<div class="legend" id="legend-purple">Mobile Development</div>
-						<div class="legend" id="legend-blue">TYPO3 Enterprise CMS</div>
-						<div class="legend" id="legend-green">FLOW3 PHP <br/>Framework</div>
-						<div class="legend" id="legend-orange">Design and UX</div>
-						<div class="legend" id="legend-red">Community / General</div>
+						<div class="legend" id="legend-yellow"><p>Business and <br/>Best Practices</p></div>
+						<div class="legend" id="legend-purple"><p>Mobile Development</p></div>
+						<div class="legend" id="legend-blue"><p>TYPO3 Enterprise CMS</p></div>
+						<div class="legend" id="legend-green"><p>FLOW3 PHP <br/>Framework</p></div>
+						<div class="legend" id="legend-orange"><p>Design and UX</p></div>
+						<div class="legend" id="legend-red"><p>Community / General</p></div>
 					</div>
 				</div>
 			</div>");

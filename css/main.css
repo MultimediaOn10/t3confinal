@@ -205,19 +205,29 @@ body {
 	margin: 10px 0 5px 30px;
 }
 
+
+/*****************************************/
+/**********  The Legend  ***************/
+/*****************************************/
+
 .legend {
 	text-align: center;
 	float: left;
+	color: #ffffff;
+	font-family: Share;
 	margin: 8px;
 	width: 170px;
 	height: 40px;
-	border: 1px solid #c9cccb;
+	border: 1px solid #000000;
 	border-radius: 2px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	box-shadow: 1px 2px 4px rgba(0,0,0,.4);
-
+	-webkit-box-shadow: inset 4px 5px 22px #000000; /* webkit browser*/ -moz-box-shadow: inset 4px 5px 22px #000000;	/* firefox */ box-shadow: inset 4px 5px 22px #000000;
+	line-height: 10pt;
 }
+
+
 
 #legend-yellow{background-color: #F4CC3E}
 #legend-purple{background-color: #856AA2}
@@ -225,7 +235,12 @@ body {
 #legend-green{background-color: #6F9A37}
 #legend-orange{background-color: #EC9A43}
 #legend-red{background-color: #C13829}
-
+#legend-yellow p{padding-top: 8px;}
+#legend-purple p{padding-top: 13px;}
+#legend-blue p{padding-top: 13px;}
+#legend-green p{padding-top: 8px;}
+#legend-orange p{padding-top: 13px;}
+#legend-red p{padding-top: 13px;}
 
 
 /*****************************************/
