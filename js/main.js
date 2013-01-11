@@ -226,9 +226,11 @@ $(document).ready(function() {
 /******** Pausen-Fancy-Picture**************/
 /*******************************************/
 
-  $("#7").click(function(){
-    $("#7").css('background-color','#ec9634');
-    console.log("success");
+  $("#break1-5").mouseover(function(){
+    $("#break1-5").css('background-color','#ec9634');
+  });
+  $("#break1-5").mouseout(function(){
+    $("#break1-5").css('background-color','#757776');
   });
 
 });
