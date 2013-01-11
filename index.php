@@ -127,10 +127,10 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 					$sql_ref2="SELECT firstname, lastname from referents where `id`='$point[referent2_id]'";
 					$ref2 = mysql_query($sql_ref2);
 					$ref2 = mysql_fetch_array($ref2);
-					$referent="($ref1[firstname] $ref1[lastname], $ref2[firstname] $ref2[lastname])";
+					$referent="(".utf8_encode($ref1['firstname'])." ".utf8_encode($ref1['lastname']).", ".utf8_encode($ref2['firstname'])." ".utf8_encode($ref2['lastname']).")";
 					}
 				else{
-					$referent="($ref1[firstname] $ref1[lastname])";
+					$referent="(".utf8_encode($ref1['firstname'])." ".utf8_encode($ref1['lastname']).")";
 				}
 			}
 			else{
