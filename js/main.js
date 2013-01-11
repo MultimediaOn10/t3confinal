@@ -171,6 +171,7 @@ $(document).ready(function() {
 
   /* Placing Bubbles to the tracks */
   $("#2").click(function(){
+    console.log('autsch!');
     disappear_bubbles();
     var trackID = $('#2').attr('id');
     short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
