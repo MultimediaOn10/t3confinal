@@ -328,16 +328,19 @@ body {
 .menu_active{
 	color: #ffffff;
 	float: left;
+	margin: 0px 5px 0px 5px;
 }
-a.menu_passiv:hover{
+.menu_passiv:hover a{
 	color: #EC9A43;
 }
 
 .slash{
 	float: left;
+	margin: 0px 5px 0px 5px;
 }
 
-.menu_passiv {
+.menu_passiv a{
 	color: #666666;
 	float: left;
+	margin: 0px 5px 0px 5px;
 }
