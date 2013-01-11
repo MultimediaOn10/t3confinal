@@ -1,7 +1,7 @@
 ﻿<?php
 
 
-include('databaseconfig.php');
+include('php/databaseconfig.php');
 $connection=mysql_connect($mysqlhost, $mysqluser, $mysqlpwd);
 
 mysql_select_db($mysqldb, $connection);
