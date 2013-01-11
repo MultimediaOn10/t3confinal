@@ -77,7 +77,7 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
                         echo("<a class=\"menu_active\" href=\"index.php?day=Friday\">Friday</a> / <a class=\"menu_passiv\" href=\"index.php?day=Saturday\">Saturday</a>");
                     } 
                     else{					
-                        echo("<a class=\"menu_passiv\" href=\"index.php?day=Friday\">Friday</a> / <a class=\"menu_activ\" href=\"index.php?day=Saturday\">Saturday</a>");                                
+                        echo("<a class=\"menu_passiv\" href=\"index.php?day=Friday\">Friday</a> / <a class=\"menu_active\" href=\"index.php?day=Saturday\">Saturday</a>");                                
                     }                 
             	?>  
         	</div>                    
