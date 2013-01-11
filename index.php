@@ -72,10 +72,11 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 			<div class="span3">&nbsp;</div>
 			<div class="span8 daytext">
                 <?php
-                    if ($day="Friday"){
+				echo $day;
+                    if ($day=="Friday"){					
                         echo("<a class=\"menu_active\" href=\"index.php?day=Friday\">Friday</a> / <a class=\"menu_passiv\" href=\"index.php?day=Saturday\">Saturday</a>");
                     } 
-                    else{
+                    else{					
                         echo("<a class=\"menu_passiv\" href=\"index.php?day=Friday\">Friday</a> / <a class=\"menu_activ\" href=\"index.php?day=Saturday\">Saturday</a>");                                
                     }                 
             	?>  
