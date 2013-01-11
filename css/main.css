@@ -58,6 +58,10 @@ body {
 
 .heading {
 	height: 160px;
+	width: 1280px;
+}
+.header{
+	width: 1280px;
 }
 
 .daytext {
@@ -70,10 +74,11 @@ body {
 	height: 30px;
 }
 
+.logo{position: absolute; right: 40px;}
 .logo img{
 	height: 60px;
 	margin-top: 40px;
-	float: right !important;
+
 }
 
 .sidebar {
