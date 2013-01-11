@@ -170,7 +170,7 @@ $(document).ready(function() {
   };
 
   /* Placing Bubbles to the tracks */
-  $("#3").click(function(){
+  $("#2").click(function(){
     disappear_bubbles();
     var trackID = $('#2').attr('id');
     short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
@@ -209,7 +209,7 @@ $(document).ready(function() {
     Animate_Bubble_right();
   });
 
-  $("#1").click(function(){
+  $("#3").click(function(){
       disappear_bubbles();
       short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
       add_content = "<div class='additional-content additional-content-left'>Hallo</div>";
