@@ -225,6 +225,10 @@ body {
 	box-shadow: 1px 2px 4px rgba(0,0,0,.4);
 	-webkit-box-shadow: inset 4px 5px 22px #000000; /* webkit browser*/ -moz-box-shadow: inset 4px 5px 22px #000000;	/* firefox */ box-shadow: inset 4px 5px 22px #000000;
 	line-height: 10pt;
+	opacity: 0.8;
+}
+.legend:hover{
+	opacity: 1.0;
 }
 
 
@@ -235,7 +239,8 @@ body {
 #legend-green{background-color: #6F9A37}
 #legend-orange{background-color: #EC9A43}
 #legend-red{background-color: #C13829}
-#legend-yellow p{padding-top: 8px;}
+#legend-yellow p{padding-top: 8px; }
+#legend-yellow p:hover{padding-top: 8px; color:#000000; }
 #legend-purple p{padding-top: 13px;}
 #legend-blue p{padding-top: 13px;}
 #legend-green p{padding-top: 8px;}
