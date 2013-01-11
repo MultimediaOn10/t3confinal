@@ -332,6 +332,7 @@ body {
 }
 .menu_passiv:hover a{
 	color: #EC9A43;
+	text-decoration: none;
 }
 
 .slash{
