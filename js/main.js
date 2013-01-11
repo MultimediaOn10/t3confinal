@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    $(".skip").animate({ left: '+=50', height: '90px' }, 800, function() {
+    });
   /*Bubble whith an arrow that points to the  right */
   function drawBubble_left(ctx, x, y, w, h, radius)
   {
@@ -239,3 +241,7 @@ $(document).ready(function() {
   });
 
 });
+
+
+
+  

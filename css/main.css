@@ -73,6 +73,7 @@ body {
 .logo img{
 	height: 60px;
 	margin-top: 40px;
+	float: right !important;
 }
 
 .sidebar {
@@ -377,4 +378,5 @@ body {
 	padding: 20px;
 	margin: 40px 60px 0px 5px;
 	width: 555px !important;
+	height: 1px;
 }
