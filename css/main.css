@@ -365,3 +365,16 @@ body {
 	float: left;
 	margin: 0px 5px 0px 5px;
 }
+/****************************/
+/***  Manual *******/
+/****************************/
+.skip{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	color: #ffffff;
+	background: rgba(112, 111, 111, 0.6);
+	padding: 20px;
+	margin: 40px 60px 0px 5px;
+	width: 555px !important;
+}

@@ -70,6 +70,12 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 		</div>
 		<div class="row">
 			<div class="span3">&nbsp;</div>
+			<div class="span8 skip">
+            	<p>Hi people, this is our page to give you a short overview about the T3Con 2012 in Cambodia. You are able to see here all talks of the conference by cklicking at the Traks. As well as you're able to get some impresiions of the spirit by clicking on at the breaks and other events. Have fund around.</p>    
+        	</div>                    
+		</div>
+		<div class="row">
+			<div class="span3">&nbsp;</div>
 			<div class="span8 daytext">
                 <?php
 				

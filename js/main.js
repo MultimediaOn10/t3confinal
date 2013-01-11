@@ -107,10 +107,10 @@ $(document).ready(function() {
       $(".title-right").text(track_title);
       $(".speaker-name-right").text(speaker_name);
         
-      $(".bubble-content-right").animate({ left: '+=50', height: 'show' }, 1000, function() {
+      $(".bubble-content-right").animate({ left: '+=100', height: 'show' }, 1000, function() {
         $(".bubble-content-right").css('color','#000000');
         /*Button Animation*/
-        $(".button-right").animate({ left: '+=50', height: 'show' }, 1000, function() {
+        $(".button-right").animate({ left: '+=100', height: 'show' }, 1000, function() {
           $(".button-right").text("Info »");
         });
       });
