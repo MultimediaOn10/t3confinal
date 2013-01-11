@@ -17,16 +17,20 @@
 
 .track{
 	font-family: Helvetica;
+	line-height: 10pt;
 	
 }
 .track-title{
-	font-size: 13px;
+	font-size: 12px;
 	height: 30px;
+	padding-bottom: 10px;
+	
 }
 .track-speaker{
 	font-weight: lighter;
 	font-size: 10px;
-	float: right;
+	/*float: right;*/
+	color: #333333;
 	padding-bottom: 3px;
 	padding-right: 5px;
 }
