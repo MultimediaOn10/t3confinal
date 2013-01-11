@@ -236,7 +236,7 @@ $(document).ready(function() {
   });
   $("#break1-5").mouseout(function(){
     $("#break1-5").css('background-color','#757776');
-        $("#break1-5").stop(true).animate({ left: '+=50', height: '25px' }, 500, function() {
+        $("#break1-5").stop(true).animate({ left: '+=50', height: '30px' }, 500, function() {
     });
   });
 
