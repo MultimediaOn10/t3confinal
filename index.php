@@ -1,11 +1,9 @@
-<?php
+﻿<?php
 
 
-$mysqlhost="localhost"; 
-$mysqluser="root";
-$mysqlpwd="";
+include('databaseconfig.php');
 $connection=mysql_connect($mysqlhost, $mysqluser, $mysqlpwd);
-$mysqldb="t3con"; 
+
 mysql_select_db($mysqldb, $connection);
 
 //Conferenceinformation
