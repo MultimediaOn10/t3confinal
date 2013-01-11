@@ -219,4 +219,16 @@ $(document).ready(function() {
       Animate_Bubble_left();
   });
 
+
+
+
+/*******************************************/
+/******** Pausen-Fancy-Picture**************/
+/*******************************************/
+
+  $("#7").click(function(){
+    $("#7").css('background-color','#ec9634');
+    console.log("success");
+  });
+
 });

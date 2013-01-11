@@ -162,7 +162,7 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 			    elseif($point['column']=="2" && $point['subcolumn']=="1"){
 			        echo(" <div class=\"row\">
 			            <div class=\"span6\">
-			            <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['0']."\ id=\"".$point['0']."\"">
+			            <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['0']."\ id=\"".$point['0']."\">
 						<div class=\"track-title\">".$point['title']."</div> <div class=\"track-speaker\">".$referent."</div>							
 			            </div>
 						<div class=\"left-floating middle-field first-field\">
