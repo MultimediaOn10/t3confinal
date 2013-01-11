@@ -1,0 +1,72 @@
+/*Typo3 Fonttype*/
+@font-face { font-family: Share;  src: url('../font/Share-TTF/Share-Regular.ttf'); } 
+
+@font-face { font-family: ShareBold;  src: url('../font/Share-TTF/Share-Bold.ttf'); } 
+@font-face {
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Permanent Marker'), local('PermanentMarker'), url(http://themes.googleusercontent.com/static/fonts/permanentmarker/v2/9vYsg5VgPHKK8SXYbf3sMupm9E4gBdgiUiSJePew_SQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Rock Salt';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rock Salt'), local('RockSalt'), url(http://themes.googleusercontent.com/static/fonts/rocksalt/v3/Q94aHXFHGip10K5uxi1jOD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+.track{
+	font-family: Helvetica;
+	
+}
+.track-title{
+	font-size: 13px;
+	height: 30px;
+}
+.track-speaker{
+	font-weight: lighter;
+	font-size: 10px;
+	float: right;
+	padding-bottom: 3px;
+	padding-right: 5px;
+}
+.middle-field{
+	font-family: ShareBold;
+	font-size: 12px;
+}
+.keynote-time{
+	font-family: ShareBold;
+	font-size: 12px;
+}
+.content-heading{
+	font-family: Share,Arial;
+	font-size: 14px;
+}
+.heading-text{
+	font-size: 16px;
+}
+.span7{
+	font-family: Share;
+}
+.bubble h3{
+	font-size: 18px;
+	font-family: Share;
+	color: #fff;
+	line-height: 1.2em;
+}
+.bubble-text{
+	font-size: 10px;
+	font-family: Helvetica,Arial;
+	line-height: 1.2em;
+	text-align: left;
+	margin-left: 5px;
+	padding: 5px 0px 5px 5px;
+	margin-bottom: 0px;
+}
+.speaker-name{
+	color: #fff;
+	/*font-style: italic;*/
+	font-weight: lighter;
+	font-size: 11px;
+	text-align: left;
+}
