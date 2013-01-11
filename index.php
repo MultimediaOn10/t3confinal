@@ -22,7 +22,7 @@ else{
 
 
 $conference_id=1;
-$sql_pp="Select * from programpoints left join topics on programpoints.topic_id=topics.id  WHERE `conference_id`='$conference_id' and `day`='$day' order by programpoints.start_time ASC";
+$sql_pp="Select * from programpoints right join topics on programpoints.topic_id=topics.id  WHERE `conference_id`='$conference_id' and `day`='$day' order by programpoints.start_time ASC";
 
 //Html-Datei erzeugen
 ?>
@@ -103,6 +103,7 @@ $sql_pp="Select * from programpoints left join topics on programpoints.topic_id=
 					
 			<?php	
 			$pp = mysql_query($sql_pp);
+			
 			echo("
 			<div class=\"span6 center-content\">
 							<div class=\"row\">
@@ -116,6 +117,7 @@ $sql_pp="Select * from programpoints left join topics on programpoints.topic_id=
 								</div>
 							</div>");
 			while($point = mysql_fetch_array($pp)){
+				//print_r($point);
 				if ($point['referent_id'] != 0){
 					$sql_ref1="SELECT firstname, lastname from referents where `id`='$point[referent_id]'";
 					$ref1 = mysql_query($sql_ref1);
@@ -149,7 +151,7 @@ $sql_pp="Select * from programpoints left join topics on programpoints.topic_id=
 			        echo("<div class=\"keynote-time\">");
 			        echo(substr($point['start_time'],0,5)."-<br/>".substr($point['end_time'],0,5));
 			        echo("</div>");
-			        echo("<div class=\"keynote-track ".$point['color']."-track\" id=\"".$point['id']."\">");
+			        echo("<div class=\"keynote-track ".$point['color']."-track\" id=\"".$point['0']."\">");
 			        echo("<div class=\"track-title\">".$point['title']."</div><div class=\"track-speaker\">".$referent."</div>");
 			                                                      
 			        echo("</div>
@@ -159,7 +161,7 @@ $sql_pp="Select * from programpoints left join topics on programpoints.topic_id=
 			    elseif($point['column']=="2" && $point['subcolumn']=="1"){
 			        echo(" <div class=\"row\">
 			            <div class=\"span6\">
-			            <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['id']."\">
+			            <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['0']."\">
 						<div class=\"track-title\">".$point['title']."</div> <div class=\"track-speaker\">".$referent."</div>							
 			            </div>
 						<div class=\"left-floating middle-field first-field\">
@@ -168,7 +170,7 @@ $sql_pp="Select * from programpoints left join topics on programpoints.topic_id=
 			                                         
 			    }
 			    elseif($point['column']=="2" && $point['subcolumn']=="2"){                                          
-			        echo(" <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['id']."\">
+			        echo(" <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['0']."\">
 										<div class=\"track-title\">".$point['title']."</div><div class=\"track-speaker\">".$referent."</div>
 										
 			                                                    </div>
