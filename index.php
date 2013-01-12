@@ -72,6 +72,12 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 		</div>
 		<div class="row">
 			<div class="span3">&nbsp;</div>
+			<div class="span8 skip">
+            	<p>Hi people, this is our page to give you a short overview about the T3Con 2012 in Cambodia. You are able to see here all talks of the conference by cklicking at the Traks. As well as you're able to get some impresiions of the spirit by clicking on at the breaks and other events. Have fun around.</p>    
+        	</div>                    
+		</div>
+		<div class="row">
+			<div class="span3">&nbsp;</div>
 			<div class="span8 daytext">
                 <?php
 				
@@ -129,10 +135,10 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 					$sql_ref2="SELECT firstname, lastname from referents where `id`='$point[referent2_id]'";
 					$ref2 = mysql_query($sql_ref2);
 					$ref2 = mysql_fetch_array($ref2);
-					$referent="($ref1[firstname] $ref1[lastname], $ref2[firstname] $ref2[lastname])";
+					$referent="(".utf8_encode($ref1['firstname'])." ".utf8_encode($ref1['lastname']).", ".utf8_encode($ref2['firstname'])." ".utf8_encode($ref2['lastname']).")";
 					}
 				else{
-					$referent="($ref1[firstname] $ref1[lastname])";
+					$referent="(".utf8_encode($ref1['firstname'])." ".utf8_encode($ref1['lastname']).")";
 				}
 			}
 			else{
@@ -193,12 +199,12 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 
 			<div class="row">
 					<div class="span6">
-						<div class="legend" id="legend-yellow">Business and <br/>Best Practices</div>
-						<div class="legend" id="legend-purple">Mobile Development</div>
-						<div class="legend" id="legend-blue">TYPO3 Enterprise CMS</div>
-						<div class="legend" id="legend-green">FLOW3 PHP <br/>Framework</div>
-						<div class="legend" id="legend-orange">Design and UX</div>
-						<div class="legend" id="legend-red">Community / General</div>
+						<div class="legend" id="legend-yellow"><p>Business and <br/>Best Practices</p></div>
+						<div class="legend" id="legend-purple"><p>Mobile Development</p></div>
+						<div class="legend" id="legend-blue"><p>TYPO3 Enterprise CMS</p></div>
+						<div class="legend" id="legend-green"><p>FLOW3 PHP <br/>Framework</p></div>
+						<div class="legend" id="legend-orange"><p>Design and UX</p></div>
+						<div class="legend" id="legend-red"><p>Community / General</p></div>
 					</div>
 				</div>
 			</div>");

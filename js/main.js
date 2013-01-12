@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    $(".skip").animate({ left: '+=50', height: '90px' }, 800, function() {
+    });
   /*Bubble whith an arrow that points to the  right */
   function drawBubble_left(ctx, x, y, w, h, radius)
   {
@@ -107,10 +109,10 @@ $(document).ready(function() {
       $(".title-right").text(track_title);
       $(".speaker-name-right").text(speaker_name);
         
-      $(".bubble-content-right").animate({ left: '+=50', height: 'show' }, 1000, function() {
+      $(".bubble-content-right").animate({ left: '+=100', height: 'show' }, 1000, function() {
         $(".bubble-content-right").css('color','#000000');
         /*Button Animation*/
-        $(".button-right").animate({ left: '+=50', height: 'show' }, 1000, function() {
+        $(".button-right").animate({ left: '+=100', height: 'show' }, 1000, function() {
           $(".button-right").text("Info »");
         });
       });
@@ -169,11 +171,19 @@ $(document).ready(function() {
     });
   };
 
-  /* Get the content for the bubbles*/
-  function get_content(){
-   $.ajax({
+  /* Placing Bubbles to the tracks */
+  $("#2").click(function(){
+    console.log('autsch!');
+    disappear_bubbles();
+    var trackID = $('#2').attr('id');
+    short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
+    add_content = "<div class='additional-content additional-content-right'>Hallo</div>";
+    track_title = "Der beste Vortrag aller Zeiten";
+    speaker_name = "Liesa Burgey";
+    $.ajax({
       async: false,
       url: "php/ajaxrequest.php",
+      //url: "../cakephp/app/Controller/AjaxrequestController.php",
       data: { trackID:trackID, action: "getmycontent" },
       type: "POST",
       dataType: "json",
@@ -198,18 +208,6 @@ $(document).ready(function() {
                 console.log('autsch!');
             }
     });
-  });
-
-  /* Placing Bubbles to the tracks */
-  $("#2").click(function(){
-    console.log('autsch!');
-    disappear_bubbles();
-    var trackID = $('#2').attr('id');
-    short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
-    add_content = "<div class='additional-content additional-content-right'>Hallo</div>";
-    track_title = "Der beste Vortrag aller Zeiten";
-    speaker_name = "Liesa Burgey";
-
     $("#bubble-1").css('margin-top','30px');
     Animate_Bubble_right();
   });
@@ -224,4 +222,26 @@ $(document).ready(function() {
       Animate_Bubble_left();
   });
 
+
+
+
+/*******************************************/
+/******** Pausen-Fancy-Picture**************/
+/*******************************************/
+
+  $("#break1-5").mouseover(function(){
+    $("#break1-5").css('background-color','#ec9634');
+    $("#break1-5").stop(true).animate({ left: '+=50', height: '100px' }, 500, function() {
+    });
+  });
+  $("#break1-5").mouseout(function(){
+    $("#break1-5").css('background-color','#757776');
+        $("#break1-5").stop(true).animate({ left: '+=50', height: '30px' }, 500, function() {
+    });
+  });
+
 });
+
+
+
+  
