@@ -350,8 +350,20 @@ html{
 	box-shadow: 1px 2px 4px rgba(0,0,0,.4);
 	display: none;
 	cursor: pointer;
-	
 }
+
+.video-link {
+   z-index:299;
+   position: absolute;
+   height: 90px;
+   width: 120px;
+   left: 50px;
+}
+
+.video {
+	position: relative;
+}
+
 /****************************/
 /***  Day-Menu         *******/
 /****************************/

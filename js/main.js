@@ -94,6 +94,7 @@ $(document).ready(function() {
   var add_content;
   var track_title;
   var speaker_name;
+  var trackID;
 
   /*Animate the right bubbles*/  
   function Animate_Bubble_right(){
@@ -105,7 +106,7 @@ $(document).ready(function() {
 
     /* Add Animation to Bubble*/
     $('#bubble-1').fadeIn('600', function() {
-      $(".bubble-content-right").text(short_description);
+      $(".bubble-content-right").append(short_description);
       $(".title-right").text(track_title);
       $(".speaker-name-right").text(speaker_name);
         
@@ -129,7 +130,7 @@ $(document).ready(function() {
 
     /* Add Animation to Bubble*/
     $('#bubble-2').fadeIn('600', function() {
-      $(".bubble-content-left").text(short_description);
+      $(".bubble-content-left").append(short_description);
       $(".title-left").text(track_title);
       $(".speaker-name-left").text(speaker_name);
         
@@ -148,16 +149,16 @@ $(document).ready(function() {
     $(".button-right").css("display","none");
     $(".bubble-content-right").append(add_content);
 
-    $(".additional-content-right").animate({ left: '+=50', height: 'show' }, 1000, function() {
-      $(".additional-content-right").css('color','#000000');
+    $(".additional-content").animate({ left: '+=50', height: 'show' }, 1000, function() {
+      $(".additional-content").css('color','#000000');
     });       
   });
   $(".button-left").click(function(){
     $(".button-left").css("display","none");
     $(".bubble-content-left").append(add_content);
 
-    $(".additional-content-left").animate({ left: '+=50', height: 'show' }, 1000, function() {
-      $(".additional-content-left").css('color','#000000');
+    $(".additional-content").animate({ left: '+=50', height: 'show' }, 1000, function() {
+      $(".additional-content").css('color','#000000');
     });       
   });
 
@@ -171,19 +172,11 @@ $(document).ready(function() {
     });
   };
 
-  /* Placing Bubbles to the tracks */
-  $("#2").click(function(){
-    console.log('autsch!');
-    disappear_bubbles();
-    var trackID = $('#2').attr('id');
-    short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
-    add_content = "<div class='additional-content additional-content-right'>Hallo</div>";
-    track_title = "Der beste Vortrag aller Zeiten";
-    speaker_name = "Liesa Burgey";
+  /* Get the content for the bubbles*/
+  function get_contents(trackID){
     $.ajax({
       async: false,
       url: "php/ajaxrequest.php",
-      //url: "../cakephp/app/Controller/AjaxrequestController.php",
       data: { trackID:trackID, action: "getmycontent" },
       type: "POST",
       dataType: "json",
@@ -191,57 +184,58 @@ $(document).ready(function() {
       success: function (data, textStatus, XMLHttpRequest) {
                 console.log('success!');
                 for (var i = 0; i < data.items.length; i++) {
-                    /*var titel = data.items[i].titel;
-                    var farbe_banner = data.items[i].farbe_banner;
-                    var farbe_links = data.items[i].farbe_links;
-                    var farbe_rechts = data.items[i].farbe_rechts;
-                    var Contentanordnung  = data.items[i].Contentanordnung ;
-
-            
-                    $('#banner').css('background-color', farbe_banner);
-                    $('#contentleft').css('background-color', farbe_links);
-                    $('#contentright').css('background-color', farbe_rechts);
-                    $('#column2').html('<div>' + Contentanordnung  + '</div>');*/
+                    var description_text = data.items[i].note;
+                    var videolink = data.items[i].url;
                 }
+                short_description = "<img src='http://img.youtube.com/vi/"+videolink+"/1.jpg'/><a class='video-link' href='http://www.youtube.com/watch?v="+videolink+"'>link</a>";
+                add_content = "<div class='additional-content'>"+description_text+"</div>";   
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log('autsch!');
             }
     });
+    $.ajax({
+      async: false,
+      url: "php/ajaxrequest_nametitle.php",
+      data: { trackID:trackID, action: "getspeakertitle"},
+      type: "POST",
+      dataType: "json",
+      cache: false,
+      success: function (data, textStatus, XMLHttpRequest) {
+                console.log('success!');
+                for (var i = 0; i < data.items.length; i++) {
+                    //lol
+                }   
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log('autsch!');
+            }
+    });
+  };
+
+  /* Placing Bubbles to the tracks */
+  $("#2").click(function(){
+    trackID = $('#2').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    track_title = "Der beste Vortrag aller Zeiten";
+    speaker_name = "Liesa Burgey";
     $("#bubble-1").css('margin-top','30px');
     Animate_Bubble_right();
   });
 
   $("#3").click(function(){
-      disappear_bubbles();
-      short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
-      add_content = "<div class='additional-content additional-content-left'>Hallo</div>";
-      track_title = "Der beste Vortrag aller Zeiten";
-      speaker_name = "Liesa Burgey";
-      $("#bubble-2").css('margin-top','90px');
-      Animate_Bubble_left();
+    trackID = $('#3').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    track_title = "Der beste Vortrag aller Zeiten";
+    speaker_name = "Liesa Burgey";
+    $("#bubble-2").css('margin-top','90px');
+    Animate_Bubble_left();
   });
 
-
-
-
-/*******************************************/
-/******** Pausen-Fancy-Picture**************/
-/*******************************************/
-
-  $("#break1-5").mouseover(function(){
-    $("#break1-5").css('background-color','#ec9634');
-    $("#break1-5").stop(true).animate({ left: '+=50', height: '100px' }, 500, function() {
-    });
-  });
-  $("#break1-5").mouseout(function(){
-    $("#break1-5").css('background-color','#757776');
-        $("#break1-5").stop(true).animate({ left: '+=50', height: '30px' }, 500, function() {
-    });
-  });
 
 });
-
 
 
   
