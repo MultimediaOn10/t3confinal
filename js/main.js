@@ -169,19 +169,11 @@ $(document).ready(function() {
     });
   };
 
-  /* Placing Bubbles to the tracks */
-  $("#2").click(function(){
-    console.log('autsch!');
-    disappear_bubbles();
-    var trackID = $('#2').attr('id');
-    short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
-    add_content = "<div class='additional-content additional-content-right'>Hallo</div>";
-    track_title = "Der beste Vortrag aller Zeiten";
-    speaker_name = "Liesa Burgey";
-    $.ajax({
+  /* Get the content for the bubbles*/
+  function get_content(){
+   $.ajax({
       async: false,
       url: "php/ajaxrequest.php",
-      //url: "../cakephp/app/Controller/AjaxrequestController.php",
       data: { trackID:trackID, action: "getmycontent" },
       type: "POST",
       dataType: "json",
@@ -206,6 +198,18 @@ $(document).ready(function() {
                 console.log('autsch!');
             }
     });
+  });
+
+  /* Placing Bubbles to the tracks */
+  $("#2").click(function(){
+    console.log('autsch!');
+    disappear_bubbles();
+    var trackID = $('#2').attr('id');
+    short_description = "Dies ist ein kurzer Text der den Inhalt der Veranstaltung beschreibt";
+    add_content = "<div class='additional-content additional-content-right'>Hallo</div>";
+    track_title = "Der beste Vortrag aller Zeiten";
+    speaker_name = "Liesa Burgey";
+
     $("#bubble-1").css('margin-top','30px');
     Animate_Bubble_right();
   });
@@ -218,24 +222,6 @@ $(document).ready(function() {
       speaker_name = "Liesa Burgey";
       $("#bubble-2").css('margin-top','90px');
       Animate_Bubble_left();
-  });
-
-
-
-
-/*******************************************/
-/******** Pausen-Fancy-Picture**************/
-/*******************************************/
-
-  $("#break1-5").mouseover(function(){
-    $("#break1-5").css('background-color','#ec9634');
-    $("#break1-5").stop(true).animate({ left: '+=50', height: '100px' }, 500, function() {
-    });
-  });
-  $("#break1-5").mouseout(function(){
-    $("#break1-5").css('background-color','#757776');
-        $("#break1-5").stop(true).animate({ left: '+=50', height: '25px' }, 500, function() {
-    });
   });
 
 });

@@ -345,3 +345,19 @@ body {
 	float: left;
 	margin: 0px 5px 0px 5px;
 }
+
+/****************************/
+/***  fancy slides    *******/
+/****************************/
+.slides_container {
+			width:200px;
+			height:100px;
+			display:none;
+}
+
+.slides_container div {
+			width:200px;
+			height:100px;
+			display:block;
+			float: right;
+}
