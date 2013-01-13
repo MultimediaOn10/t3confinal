@@ -357,6 +357,8 @@ html{
    height: 90px;
    width: 120px;
    left: 50px;
+   font-size: 0px;
+   background-image: url('../img/Play.png');
 }
 
 .video {
