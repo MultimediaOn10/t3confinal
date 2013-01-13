@@ -215,7 +215,7 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 					<canvas id="canvas2" class="bubbleborder" width="240" height="200" >
 					</canvas>
 					<div class="bubbletext bubbletext-right">
-						<h3>Der Titel des Vortrags</h3>
+						<h3 class="title title-right">Der Titel des Vortrags</h3>
 						<div class="speaker-name speaker-name-right">Liesa Burgey</div>
 						<div class="bubble-content bubble-content-right">
 							<p class="bubble-text bubble-text-right"> Dies ist ein Satz in welchem der Inhalt beschrieben ist.</p>
