@@ -14,6 +14,7 @@ $trackID = $_POST ["trackID"];
         
     while($row = mysql_fetch_array($getspeakertitle)) {
 	$row['ref1_last']=utf8_encode($row['ref1_last']);
+	$row['ref2_last']=utf8_encode($row['ref2_last']);
     $rows[] = $row;
 	}
     echo json_encode(array("items" => $rows));
