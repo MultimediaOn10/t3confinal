@@ -52,7 +52,7 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="js/main.js" type="text/javascript"></script>
 	<script src="js/slides/slides.jquery.js" type="text/javascript"></script>
-	<script src="js/slides/image_slider.js" type="text/javascript"></script>
+	<script src="js/image_slider.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="container">         
