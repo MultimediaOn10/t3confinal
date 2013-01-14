@@ -158,11 +158,13 @@ $(document).ready(function() {
           speaker1_fullname = data.items[i].ref1_first+" "+data.items[i].ref1_last;
           speaker2_fullname = data.items[i].ref2_first+" "+data.items[i].ref2_last;
         }  
-        if (speaker2_fullname != "null null") {
-          speaker_name = speaker1_fullname+" & "+speaker2_fullname;
+        console.log(speaker2_fullname);
+        /* Check if there are one or two speakers*/
+        if (speaker2_fullname != "null") {
+          speaker_name = speaker1_fullname;
         }
         else {
-          speaker_name = speaker1_fullname;
+          speaker_name = speaker1_fullname+" & "+speaker2_fullname;
         }
       },
       error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -251,10 +253,8 @@ $(document).ready(function() {
     else {
       content_height  = 70;
     }
-    console.log(content_height);
     var canvas = document.getElementById('canvas1');
     var ctx = canvas.getContext('2d'); 
-
     drawBubble_left(ctx, 10,60,200, content_height +15, 10);
   };
 

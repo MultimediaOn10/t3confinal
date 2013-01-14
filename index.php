@@ -51,8 +51,18 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 	<script src="js/html5shiv.js" type="text/javascript"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="js/main.js" type="text/javascript"></script>
+	<!--Embed the slider-->
 	<script src="js/slides/slides.jquery.js" type="text/javascript"></script>
 	<script src="js/image_slider.js" type="text/javascript"></script>
+	<!--Embed the fancy box-->
+	<script type="text/javascript" src="js/fancyapps/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	<link rel="stylesheet" href="js/fancyapps/source/jquery.fancybox.css?v=2.1.3" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/fancyapps/source/jquery.fancybox.pack.js?v=2.1.3"></script>
+	<link rel="stylesheet" href="js/fancyapps/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/fancyapps/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+	<script type="text/javascript" src="js/fancyapps/source/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+	<link rel="stylesheet" href="js/fancyapps/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/fancyapps/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 </head>
 <body>
 	<div class="container">         
