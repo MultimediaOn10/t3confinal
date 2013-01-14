@@ -306,7 +306,8 @@ html{
 	display: none;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
-	margin-top: -4px;
+	margin-top: -8px;
+	padding: 10px 0px 0 0;
 }
 
 .bubble-picture{

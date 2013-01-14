@@ -38,6 +38,24 @@ $(document).ready(function() {
     Animate_Bubble_left();
   });
 
+  $("#4").click(function(){
+    trackID = $('#4').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','90px');
+    Animate_Bubble_right();
+  });
+
+  $("#6").click(function(){
+    trackID = $('#6').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble2_drawing(track_title); 
+    $("#bubble-2").css('margin-top','210px');
+    Animate_Bubble_left();
+  });
+
   /*Animate the right bubble*/  
   function Animate_Bubble_right(){
     /* remove text from button and bubble to load in the new text*/
@@ -212,11 +230,11 @@ $(document).ready(function() {
   {
     /*check the length of the title for the length of the bubble*/
     var title_chars = track_title.length;
-    if (title_chars >= 40){
-      content_height  = 95;
+    if (title_chars > 40){
+      content_height  = 135;
     }
     else {
-      content_height  = 50;
+      content_height  = 70;
     }
     var canvas = document.getElementById('canvas2');
     var ctx = canvas.getContext('2d'); 
@@ -227,13 +245,13 @@ $(document).ready(function() {
   {
     /*check the length of the title for the length of the bubble*/
     var title_chars = track_title.length;
-    if (title_chars >= 40){
-      content_height  = 95;
+    if (title_chars > 40){
+      content_height  = 135;
     }
     else {
-      content_height  = 50;
+      content_height  = 70;
     }
-
+    console.log(content_height);
     var canvas = document.getElementById('canvas1');
     var ctx = canvas.getContext('2d'); 
 
