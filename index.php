@@ -55,6 +55,7 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 	<script src="js/slides/slides.jquery.js" type="text/javascript"></script>
 	<script src="js/image_slider.js" type="text/javascript"></script>
 	<!--Embed the fancy box-->
+	<script type="text/javascript" src="js/fancybox.js"></script>
 	<script type="text/javascript" src="js/fancyapps/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 	<link rel="stylesheet" href="js/fancyapps/source/jquery.fancybox.css?v=2.1.3" type="text/css" media="screen" />
 	<script type="text/javascript" src="js/fancyapps/source/jquery.fancybox.pack.js?v=2.1.3"></script>

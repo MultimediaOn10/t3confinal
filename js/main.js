@@ -137,7 +137,8 @@ $(document).ready(function() {
                     var description_text = data.items[i].note;
                     var videolink = data.items[i].url;
                 }
-                short_description = "<img src='http://img.youtube.com/vi/"+videolink+"/1.jpg'/><a class='video-link' href='http://www.youtube.com/watch?v="+videolink+"'>link</a>";
+                console.log(videolink);
+                short_description = "<img src='http://img.youtube.com/vi/"+videolink+"/1.jpg'/><a class='video-link fancybox-media' rel='group' href='http://www.youtube.com/watch?v="+videolink+"'>link</a>";
                 add_content = "<div class='additional-content'>"+description_text+"</div>";   
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -158,7 +159,6 @@ $(document).ready(function() {
           speaker1_fullname = data.items[i].ref1_first+" "+data.items[i].ref1_last;
           speaker2_fullname = data.items[i].ref2_first+" "+data.items[i].ref2_last;
         }  
-        console.log(speaker2_fullname);
         /* Check if there are one or two speakers*/
         if (speaker2_fullname != "null") {
           speaker_name = speaker1_fullname;
