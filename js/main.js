@@ -20,6 +20,14 @@ $(document).ready(function() {
   });
 
   /* Placing Bubbles to the tracks */
+  
+  $(".track").click(function(){
+    /*get the track ID*/
+    track_ID = $(this).attr('id');
+    console.log(track_ID);
+  });
+
+
   $("#2").click(function(){
     trackID = $('#2').attr('id');
     disappear_bubbles();
@@ -56,6 +64,15 @@ $(document).ready(function() {
     Animate_Bubble_left();
   });
 
+  $("#7").click(function(){
+    trackID = $('#7').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','210px');
+    Animate_Bubble_right();
+  });
+
   /*Animate the right bubble*/  
   function Animate_Bubble_right(){
     /* remove text from button and bubble to load in the new text*/
@@ -66,21 +83,45 @@ $(document).ready(function() {
 
     /* Add Animation to Bubble*/
     $('#bubble-1').fadeIn('600', function() {
-      $(".bubble-content-right").append(short_description);
       $(".title-right").append(track_title);
       $(".speaker-name-right").append(speaker_name);
         
       $(".bubble-content-right").animate({ left: '+=100', height: 'show' }, 1000, function() {
         $(".bubble-content-right").css('color','#000000');
+        $(".bubble-content-right").append(short_description);
         /*Button Animation*/
-        $(".button-right").animate({ left: '+=100', height: 'show' }, 1000, function() {
+        $(".button-right").animate({ left: '+=100', height: 'show' }, 500, function() {
           $(".button-right").append("<a class='fancybox-button' rel='group' href='#additional-content'>Info</a>");
         });
       });
     });
   };
 
-   /*Additional Animation for info-button*/
+  function Animate_Bubble_left(){
+    /* remove text from button and bubble to load in the new text*/
+    $(".button-left").empty();
+    $(".bubble-content-left").empty();
+    $(".title-left").empty();
+    $(".speaker-name-left").empty();
+
+
+    /* Add Animation to Bubble*/
+    $('#bubble-2').fadeIn('600', function() {
+      $(".title-left").append(track_title);
+      $(".speaker-name-left").append(speaker_name);
+        
+      $(".bubble-content-left").animate({ left: '+=50', height: 'show' }, 500, function() {
+        $(".bubble-content-left").css('color','#000000');
+        $(".bubble-content-left").append(short_description);
+        /*Button Animation*/
+        $(".button-left").animate({ left: '+=50', height: 'show' }, 500, function() {
+          $(".button-left").append("<a class='fancybox-button' rel='group' href='#additional-content'>Info</a>");
+        });
+      });
+    });
+  };
+
+  /*Additional Animation for info-button with fancybox*/
   $(".button-right").click(function(){ 
     $(".fancybox-button").fancybox({
       openEffect  : 'none',
@@ -102,29 +143,6 @@ $(document).ready(function() {
     });
   });
 
-  function Animate_Bubble_left(){
-    /* remove text from button and bubble to load in the new text*/
-    $(".button-left").empty();
-    $(".bubble-content-left").empty();
-    $(".title-left").empty();
-    $(".speaker-name-left").empty();
-
-
-    /* Add Animation to Bubble*/
-    $('#bubble-2').fadeIn('600', function() {
-      $(".bubble-content-left").append(short_description);
-      $(".title-left").append(track_title);
-      $(".speaker-name-left").append(speaker_name);
-        
-      $(".bubble-content-left").animate({ left: '+=50', height: 'show' }, 1000, function() {
-        $(".bubble-content-left").css('color','#000000');
-        /*Button Animation*/
-        $(".button-left").animate({ left: '+=50', height: 'show' }, 1000, function() {
-          $(".button-left").append("<a class='fancybox-button' rel='group' href='#additional-content'>Info</a>");
-        });
-      });
-    });
-  };
 
   /* Get the content for the bubbles*/
   function get_contents(trackID){
@@ -141,7 +159,6 @@ $(document).ready(function() {
                     var description_text = data.items[i].note;
                     var videolink = data.items[i].url;
                 }
-                console.log(videolink);
                 short_description = "<img src='http://img.youtube.com/vi/"+videolink+"/1.jpg'/><a class='video-link fancybox-media' rel='group' href='http://www.youtube.com/watch?v="+videolink+"'>link</a>";
                 add_content = "<div class='additional-content'>"+description_text+"</div>";   
             },
@@ -164,7 +181,7 @@ $(document).ready(function() {
           speaker2_fullname = data.items[i].ref2_first+" "+data.items[i].ref2_last;
         }  
         /* Check if there are one or two speakers*/
-        if (speaker2_fullname != "null") {
+        if (speaker2_fullname == "null") {
           speaker_name = speaker1_fullname;
         }
         else {
