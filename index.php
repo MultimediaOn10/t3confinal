@@ -222,7 +222,7 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 				</div>
 			</div>");
 			<div class="row">
-				<div class="upper-legend-text"></div>
+				<div class="lower-legend-text"></div>
 			</div>
 
 			<!--This is the right sidecontent (for the bubbles)-->
