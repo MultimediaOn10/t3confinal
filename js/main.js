@@ -74,11 +74,33 @@ $(document).ready(function() {
         $(".bubble-content-right").css('color','#000000');
         /*Button Animation*/
         $(".button-right").animate({ left: '+=100', height: 'show' }, 1000, function() {
-          $(".button-right").text("Info »");
+          $(".button-right").append("<a class='fancybox-button' rel='group' href='#additional-content'>Info</a>");
         });
       });
     });
   };
+
+   /*Additional Animation for info-button*/
+  $(".button-right").click(function(){ 
+    $(".fancybox-button").fancybox({
+      openEffect  : 'none',
+      closeEffect : 'none',
+      afterLoad   : function() {
+        this.inner.prepend('<h3 class="additional-content">'+track_title+'</h3>');
+        this.content = '<div class="additional-content">'+add_content+'</div>';
+      }
+    });
+  });
+  $(".button-left").click(function(){
+    $(".fancybox-button").fancybox({
+      openEffect  : 'none',
+      closeEffect : 'none',
+      afterLoad   : function() {
+        this.inner.prepend('<h3 class="additional-content">'+track_title+'</h3>');
+        this.content = '<div class="additional-content">'+add_content+'</div>';
+      }
+    });
+  });
 
   function Animate_Bubble_left(){
     /* remove text from button and bubble to load in the new text*/
@@ -98,29 +120,11 @@ $(document).ready(function() {
         $(".bubble-content-left").css('color','#000000');
         /*Button Animation*/
         $(".button-left").animate({ left: '+=50', height: 'show' }, 1000, function() {
-          $(".button-left").text("Info »");
+          $(".button-left").append("<a class='fancybox-button' rel='group' href='#additional-content'>Info</a>");
         });
       });
     });
   };
-
-  /*Additional Animation for info-button*/
-  $(".button-right").click(function(){
-    $(".button-right").css("display","none");
-    $(".bubble-content-right").append(add_content);
-
-    $(".additional-content").animate({ left: '+=50', height: 'show' }, 1000, function() {
-      $(".additional-content").css('color','#000000');
-    });       
-  });
-  $(".button-left").click(function(){
-    $(".button-left").css("display","none");
-    $(".bubble-content-left").append(add_content);
-
-    $(".additional-content").animate({ left: '+=50', height: 'show' }, 1000, function() {
-      $(".additional-content").css('color','#000000');
-    });       
-  });
 
   /* Get the content for the bubbles*/
   function get_contents(trackID){
