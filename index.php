@@ -6,6 +6,25 @@ $connection=mysql_connect($mysqlhost, $mysqluser, $mysqlpwd);
 
 mysql_select_db($mysqldb, $connection);
 
+
+
+	if (!isset($_COOKIE["T3con"]) && !isset($_POST['skip'])){
+			header("Location: php/intro.php"); 	
+	}
+    else{                   
+           if (isset($_COOKIE["T3con"])){
+               $skip=$_COOKIE["T3con"];
+           }
+            elseif(isset($_POST['skip'])){
+                 setcookie("T3con", "skip", time()+10000);
+                 $skip="skip";
+            }
+            else{
+                setcookie("T3con", "watched", time()+10000); 
+                $skip="watched";
+            }
+
+
 //Conferenceinformation
 $sql = "SELECT * from conferences where `id`='1'";
 $erg = mysql_query($sql);
@@ -64,7 +83,9 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 	<script type="text/javascript" src="js/fancyapps/source/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
 	<link rel="stylesheet" href="js/fancyapps/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
 	<script type="text/javascript" src="js/fancyapps/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-</head>
+
+	
+</head>	
 <body>
 	<div class="container">         
 		<!--This is the header-->
@@ -81,12 +102,16 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 				<a href="http://www.typo3.org"><img src="img/t3-logo.png"/></a>
 			</div>
 		</div>
-		<div class="row">
-			<div class="span3">&nbsp;</div>
-			<div class="span8 skip">
+		<?php
+		if($skip=="skip"){
+		echo("<div class=\"row\">
+			<div class=\"span3\">&nbsp;</div>
+			<div class=\"span8 skip\">
             	<p>Hi people, this is our page to give you a short overview about the T3Con 2012 in Cambodia. You are able to see here all talks of the conference by cklicking at the Traks. As well as you're able to get some impresiions of the spirit by clicking on at the breaks and other events. Have fun around.</p>    
         	</div>                    
-		</div>
+		</div>");
+		}
+		?>
 		<div class="row">
 			<div class="span3">&nbsp;</div>
 			<div class="span8 daytext">
@@ -243,3 +268,8 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 		</div>
 	</body>
 </html>
+
+<?php
+
+}
+?>
