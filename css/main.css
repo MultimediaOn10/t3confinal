@@ -412,11 +412,19 @@ html{
 
 #slides {
 	width: 390px;
+	height: 70px;
+	display: block;
+	float: right;
+	margin: 10px 10px 0 0;
 }
 
 .slides_container {
 	width:390px;
 	display:none;
+}
+
+.slides_control {
+	width: 400px;
 }
 
 .slides_container div.slide {
