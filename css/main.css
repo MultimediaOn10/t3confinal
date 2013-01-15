@@ -434,12 +434,13 @@ html{
 	margin-left: 30px;
 }
 		
-.item {
+.fancybox-images {
 	float:left;
 	width:70px;
 	height:70px;
 	margin:0 5px;
 	background:#efefef;
+	font-size: 0px;
 }
 		
 .pagination {

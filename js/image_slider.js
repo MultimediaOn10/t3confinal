@@ -24,8 +24,8 @@ $(document).ready(function() {
     $('#'+break_id).css('background-color','#ec9634');
     $('#'+break_id).append("<div id='slides'></div>");
     $('#'+break_id).stop(true).animate({ left: '+=50', height: '100px' }, 500, function() {
-      $("#slides").append("<div class='slides_container'><div class='slide'><div class='item'>Item One</div><div class='item'>Item Two</div><div class='item'>Item Three</div><div class='item'>Item X</div></div><div class='slide'><div class='item'>Item One</div><div class='item'>Item Two</div><div class='item'>Item Three</div><div class='item'>Item X</div></div></div>");
-     $(function(){
+    $("#slides").append("<div class='slides_container'><div class='slide'><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8605_thumb.jpg' href='../img/break1/MG_8605.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8607_thumb.jpg' href='../img/break1/MG_8607.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8608_thumb.jpg' href='../img/break1/MG_8608.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8609_thumb.jpg' href='../img/break1/MG_8609.jpg'>Open #2</a></div></div><div class='slide'><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8612_thumb.jpg' href='../img/break1/MG_8612.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8613_thumb.jpg' href='../img/break1/MG_8613.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8615_thumb.jpg' href='../img/break1/MG_8615.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8616_thumb.jpg' href='../img/break1/MG_8616.jpg'>Open #2</a></div></div></div>");
+    $(function(){
         $('#slides').slides({
           preload: true,
           generateNextPrev: true,
@@ -45,3 +45,6 @@ $(document).ready(function() {
     });
   });
 });
+
+/*Get the images*/
+<a class="fancybox-images" data-thumbnail="../img/break1/MG_8605_thumb.jpg" href="../img/break1/MG_8605.jpg">Open #2</a>
