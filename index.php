@@ -241,5 +241,6 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 				</div>
 			</div>
 		</div>
+		<div class="clear"></div>
 	</body>
 </html>
