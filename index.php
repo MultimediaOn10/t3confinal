@@ -103,6 +103,7 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 			</div>
 		</div>
 		<?php
+		$skip = "1";
 		if($skip=="skip"){
 		echo("<div class=\"row\">
 			<div class=\"span3\">&nbsp;</div>
