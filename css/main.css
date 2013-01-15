@@ -464,3 +464,9 @@ a.prev {
 	float: left;
 	margin-top: -50px;
 }
+/****************************/
+/***  fancy box text    *******/
+/****************************/
+.fancybox-wrap{
+	width: 960px;
+}
