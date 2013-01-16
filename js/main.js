@@ -356,6 +356,8 @@ $(document).ready(function() {
   $(document).click(function() {
     if ($('.lower-legend-text').height() == 50 || $('.upper-legend-text').height() == 50){   
         close_legends();   
+        $('.lower-legend-text').css('background-color','');
+        $('.upper-legend-text').css('background-color','');
     };
   });
 });
