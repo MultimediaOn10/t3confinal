@@ -24,7 +24,6 @@ $(document).ready(function() {
   $(".track").click(function(){
     /*get the track ID*/
     track_ID = $(this).attr('id');
-    console.log(track_ID);
   });
 
 
@@ -345,7 +344,7 @@ $(document).ready(function() {
           });
         break;
         case 'legend-red':  
-          $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
+          $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 300, function() {
             $('.lower-legend-text').text("Text6");
             $('.lower-legend-text').css('background-color','#ffffff');
           });
