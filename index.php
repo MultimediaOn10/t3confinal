@@ -1,17 +1,19 @@
 ﻿<?php
 
 
-include('php/databaseconfig.php');
-$connection=mysql_connect($mysqlhost, $mysqluser, $mysqlpwd);
-
-mysql_select_db($mysqldb, $connection);
-
 
 
 	if (!isset($_COOKIE["T3con"]) && !isset($_POST['skip'])){
 			header("Location: php/intro.php"); 	
 	}
-    else{                   
+    else{           
+
+			//Datenbank
+			include('php/databaseconfig.php');
+			$connection=mysql_connect($mysqlhost, $mysqluser, $mysqlpwd);
+			mysql_select_db($mysqldb, $connection);	
+			
+			//Cookie auslesen und setzen
            if (isset($_COOKIE["T3con"])){
                $skip=$_COOKIE["T3con"];
            }
