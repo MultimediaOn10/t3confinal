@@ -346,7 +346,12 @@ $(document).ready(function() {
         break;
       }
   });
-
+  /*Close legends by clicking somewhere*/
+  $(document).click(function() {
+    if ($('.lower-legend-text').height() == 50 || $('.upper-legend-text').height() == 50){   
+        close_legends();   
+    };
+  });
 });
 
 
