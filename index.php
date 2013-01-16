@@ -215,12 +215,13 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 						<div class=\"left-floating middle-field first-field\">
 							".substr($point['start_time'],0,5)."-<br/>".substr($point['end_time'],0,5)." 
 						</div>");                                        
-				    }
-				    elseif($point['column']=="2" && $point['subcolumn']=="2"){                                          
-				        echo(" 
-				    <div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['0']."\">
-						<div class=\"track-title\">".$point['title']."</div><div class=\"track-speaker\">".$referent."</div>					
-				    </div>
+						}
+						elseif($point['column']=="2" && $point['subcolumn']=="2"){                                          
+							echo(" 
+						<div class=\"left-floating ".$point['color']."-track track\" id=\"".$point['0']."\">
+							<div class=\"track-title\">".$point['title']."</div><div class=\"track-speaker\">".$referent."</div>					
+						</div>
+					</div>
 				</div>");
 				    }				                                    
 				}
@@ -240,9 +241,8 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 				</div>
 				<div class="row">
 					<div class="lower-legend-text span6"></div>
-				</div>
+				</div>			
 			</div>
-
 			<!--This is the right sidecontent (for the bubbles)-->
 			<div class="span3 sidebar">
 				<div class="bubble left-floating bubble-right" id="bubble-1">
