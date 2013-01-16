@@ -460,3 +460,14 @@ a.prev {
 	float: left;
 	margin-top: -50px;
 }
+
+
+/****************************/
+/***  Legend          *******/
+/****************************/
+
+.upper-legend-text, 
+.lower-legend-text {
+	height: 0px;
+	background-color: #ffffff;
+}

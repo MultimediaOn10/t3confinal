@@ -289,7 +289,63 @@ $(document).ready(function() {
     });
   };
 
+
+  /*******************************/
+  /******** The Legend ***********/
+  /*******************************/
+
+  function close_legends(){
+    $('.upper-legend-text').stop(true).animate({ left: '+=50', height: '0px' }, 500, function() {
+      $('.upper-legend-text').empty();
+    });
+    $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '0px' }, 500, function() {
+      $('.lower-legend-text').empty();
+    });
+  };
+
+  $(".legend").click(function(){
+    close_legends();
+    /*Get the id*/
+    legend_id = $(this).attr('id');
+    /*animate*/
+    switch(legend_id) {
+        case 'legend-yellow': 
+          $('.upper-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
+            $('.upper-legend-text').text("Text1");
+          });
+        break;
+        case 'legend-purple': 
+          $('.upper-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
+            $('.upper-legend-text').text("Text2");
+          });
+        break;
+        case 'legend-blue': 
+          $('.upper-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
+            $('.upper-legend-text').text("Text3");
+          });
+        break;
+        case 'legend-green':  
+          $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
+            console.log("hallo");
+            $('.lower-legend-text').text("Text4");
+          });
+        break;
+        case 'legend-orange':  
+          $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
+            $('.lower-legend-text').text("Text5");
+          });
+        break;
+        case 'legend-red':  
+          $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
+            $('.lower-legend-text').text("Text6");
+          });
+        break;
+      }
+  });
+
 });
+
+
 
 
   

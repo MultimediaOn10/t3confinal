@@ -18,7 +18,6 @@ $(document).ready(function() {
 
   /*Mouseover-Slideout-Effekt*/
  $(".break").mouseenter(function(){
-    disappear_bubbles();
     /*Get the id of the break*/
     break_id = $(this).attr('id');
     $('#'+break_id).css('background-color','#ec9634');
