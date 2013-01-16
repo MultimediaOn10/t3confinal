@@ -126,6 +126,8 @@ $(document).ready(function() {
     $(".fancybox-button").fancybox({
       openEffect  : 'none',
       closeEffect : 'none',
+      maxWidth : '600',
+      arrows     : false,
       afterLoad   : function() {
         this.inner.prepend('<h3 class="additional-content">'+track_title+'</h3>');
         this.content = '<div class="additional-content">'+add_content+'</div>';
@@ -136,6 +138,8 @@ $(document).ready(function() {
     $(".fancybox-button").fancybox({
       openEffect  : 'none',
       closeEffect : 'none',
+      maxWidth : '600',
+      arrows     : false,
       afterLoad   : function() {
         this.inner.prepend('<h3 class="additional-content">'+track_title+'</h3>');
         this.content = '<div class="additional-content">'+add_content+'</div>';
