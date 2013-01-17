@@ -75,6 +75,42 @@ $(document).ready(function() {
     Animate_Bubble_right();
   });
 
+  $("#9").click(function(){
+    trackID = $('#9').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble2_drawing(track_title); 
+    $("#bubble-2").css('margin-top','330px');
+    Animate_Bubble_left();
+  });
+
+  $("#10").click(function(){
+    trackID = $('#10').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','330px');
+    Animate_Bubble_right();
+  });
+
+    $("#11").click(function(){
+    trackID = $('#11').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble2_drawing(track_title); 
+    $("#bubble-2").css('margin-top','400px');
+    Animate_Bubble_left();
+  });
+
+  $("#12").click(function(){
+    trackID = $('#12').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','400px');
+    Animate_Bubble_right();
+  });
+
   /*Animate the right bubble*/  
   function Animate_Bubble_right(){
     /* remove text from button and bubble to load in the new text*/
@@ -169,7 +205,6 @@ $(document).ready(function() {
                 }
                 short_description = "<img src='http://img.youtube.com/vi/"+videolink+"/1.jpg'/><a class='video-link fancybox-media' rel='group' href='http://www.youtube.com/watch?v="+videolink+"'>link</a>";
                 add_content = "<div class='additional-content'>"+description_text+"</div>";
-                console.log(videolink);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log('autsch!');
@@ -377,6 +412,10 @@ $(document).ready(function() {
 });
 
 
+/*******************************/
+/******** Easteregg ***********/
+/*******************************/
 
-
-  
+$(".impressum").click.click(function(){
+  $(document).append("<div class='eastereggs></div>'")
+});
