@@ -52,24 +52,25 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="span3">&nbsp;</div>
-			<div class="span8 skip">
+			<div class="span3 skip-start">
             	<p>Hi people, this is our page to give you a short overview about the T3Con 2012 in Cambodia. You are able to see here all talks of the conference by cklicking at the Traks. As well as you're able to get some impresiions of the spirit by clicking on at the breaks and other events. Have fun around.</p>    
-        	</div>                    
-		</div>
-		<div class="row">
-				<div class="span8 video">
+        	</div> 
+        	<div class="span8 video">
 					<iframe width="640" height="480" src="https://www.youtube.com/embed/tHFh3JzTxTg?autoplay=1" frameborder="1" allowfullscreen></iframe>	
-				</div>
-		</div>
-			<div class="row">
-				
-				<div class="span12">
+				</div> 
+			<div class="span3">
 					<form action="../index.php" method="post">
 					 	 <input type="hidden" id="skip" name="skip" value="skip">
 					 	 <input type="submit" value="Skip Intro" id="skip">           
 					</form>
-				</div>
+				</div>                  
+		</div>
+
+				
+		</div>
+			<div class="row">
+				
+				
 		</div>
 
 	</body>
