@@ -6,6 +6,7 @@ $(document).ready(function() {
   var track_title;
   var speaker_name;
   var trackID;
+  var videolink;
 
   /*Animation for the skip-button*/
   $(".skip").animate({ left: '+=50', height: '90px' }, 800, function() {
@@ -163,11 +164,12 @@ $(document).ready(function() {
                 for (var i = 0; i < data.items.length; i++) {
                     var description_text = data.items[i].note;
                     var videolink = data.items[i].url;
+
                     console.log(videolink);
                 }
                 short_description = "<img src='http://img.youtube.com/vi/"+videolink+"/1.jpg'/><a class='video-link fancybox-media' rel='group' href='http://www.youtube.com/watch?v="+videolink+"'>link</a>";
                 add_content = "<div class='additional-content'>"+description_text+"</div>";
-                console.log(short_description);
+                console.log(videolink);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log('autsch!');
@@ -186,13 +188,14 @@ $(document).ready(function() {
           track_title = data.items[i].title;
           speaker1_fullname = data.items[i].ref1_first+" "+data.items[i].ref1_last;
           speaker2_fullname = data.items[i].ref2_first+" "+data.items[i].ref2_last;
+          speaker2_firstname = data.items[i].ref2_first
         }  
         /* Check if there are one or two speakers*/
-        if (speaker2_fullname == "null") {
-          speaker_name = speaker1_fullname;
+        if (speaker2_firstname != null) {
+          speaker_name = speaker1_fullname+" & "+speaker2_fullname;
         }
         else {
-          speaker_name = speaker1_fullname+" & "+speaker2_fullname;
+          speaker_name = speaker1_fullname;
         }
       },
       error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -290,7 +293,6 @@ $(document).ready(function() {
   function disappear_bubbles(){
     $("#bubble-1").fadeOut('slow', function() {
       showOrHide = false;
-      $(videolink).empty();
     });
     $("#bubble-2").fadeOut('slow', function() {
       showOrHide = false;
@@ -340,7 +342,6 @@ $(document).ready(function() {
         break;
         case 'legend-green':  
           $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
-            console.log("hallo");
             $('.lower-legend-text').text("All about the new PHP frameworks with TYPO3 Community");
             $('.lower-legend-text').css('background-color','#6F9A37');
             $('.lower-legend-text').addClass("legend-style-text");
