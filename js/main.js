@@ -330,15 +330,17 @@ $(document).ready(function() {
       type: "POST",
       dataType: "json",
       cache: false,
-      success: function (data, textStatus, XMLHttpRequest) {
-                console.log('success! I got the data for the bubble');
+     success: function (data, textStatus, XMLHttpRequest) {
+
                 for (var i = 0; i < data.items.length; i++) {
+                    if (data.items[i].note !=''){
                     var description_text = data.items[i].note;
+                    }
                     if (data.items[i].url != ''){
                       var videolink = data.items[i].url;
                     }                        
                 }
-                console.log(videolink);
+
                 short_description = "<img src='http://img.youtube.com/vi/"+videolink+"/1.jpg'/><a class='video-link fancybox-media' rel='group' href='http://www.youtube.com/watch?v="+videolink+"'>link</a>";
                 add_content = "<div class='additional-content'>"+description_text+"</div>";
             },

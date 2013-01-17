@@ -86,6 +86,9 @@
 .fancybox-button{
 	color: #ffffff;
 }
+.fancybox-button:hover{
+	color: #ffffff;
+}
 p.impressum {
 	font-family: Helvetica;
 	font-weight: lighter;
