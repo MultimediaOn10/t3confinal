@@ -71,14 +71,6 @@ $(document).ready(function() {
   });
 
  /**** ADD Fancybox to Images ***/
-  $(".fancybox-media").fancybox({
-    openEffect  : 'none',
-    closeEffect : 'none',
-    helpers : {
-      media : {}
-    }
-  });
-
   $(".fancybox-images").attr('rel', 'gallery')
   $(".fancybox-images").fancybox({
     helpers: {
