@@ -19,7 +19,9 @@ $(document).ready(function() {
         cache: false,
         success: function (data, textStatus, XMLHttpRequest) {
                 console.log('success!');
+                //images_links = data.items;
                 for (var i = 0; i < data.items.length; i++) {
+                  console.log(data.items);
                   images_links = data.items[i];
                 }
                 console.log(images_links);
