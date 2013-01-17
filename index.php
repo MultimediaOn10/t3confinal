@@ -1,5 +1,5 @@
 ﻿<?php	
-	if(!isset($_COOKIE["T3con"]) && !isset($_POST['skip'])){
+	if(!isset($_COOKIE['t3con']) && !isset($_POST['skip'])){
 		echo ("<meta http-equiv='refresh' content='0; URL=php/intro.php'>");
 		//header("Location: php/intro.php");
 		}
@@ -11,18 +11,18 @@
 			mysql_select_db($mysqldb, $connection);	
 			
 			//Cookie auslesen und setzen
-           if (isset($_COOKIE["T3con"])){
-               $skip=$_COOKIE["T3con"];
+           if (isset($_COOKIE['t3con'])){
+               $skip=$_COOKIE['t3con'];
            }
             elseif(isset($_POST['skip'])){
-                 setcookie("T3con", "skip", time()+10000);
+                 setcookie('t3con', 'skip', time()+10000);
                  $skip="skip";
             }
             else{
-                setcookie("T3con", "watched", time()+10000); 
+                setcookie('t3con', 'watched', time()+10000); 
                 $skip="watched";
             }
-
+		echo ($_COOKIE['t3con']);
 
 //Conferenceinformation
 $sql = "SELECT * from conferences where `id`='1'";
