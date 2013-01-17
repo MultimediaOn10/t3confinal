@@ -3,19 +3,10 @@ $(document).ready(function() {
   /******** Pausen-Fancy-Slides **************/
   /*******************************************/
 
-  /*Make the bubbles disappear*/
-  function disappear_bubbles(){
-    $("#bubble-1").fadeOut('slow', function() {
-      showOrHide = false;
-    });
-    $("#bubble-2").fadeOut('slow', function() {
-      showOrHide = false;
-    });
-  };
-
   /*get the ids of the breaks*/
   var break_id;
   var breakname;
+  var images_links;
   /*Get the images*/
 
     function get_images(breakname){
@@ -28,9 +19,14 @@ $(document).ready(function() {
         cache: false,
         success: function (data, textStatus, XMLHttpRequest) {
                 console.log('success!');
-                  for (var i = 0; i < data.items.length; i++) {
-                    console.log(data.items[i].items);
+                //images_links = data.items;
+                for (var i = 0; i < data.items.length; i++) {
+                  console.log(data.items);
+                  images_links = data.items[i];
                 }
+                console.log(images_links);
+                $('#'+breakname).append("<div id='slides'></div>");
+                $("#slides").append("<div class='slides_container'><div class='slide'>"+images_links+"</div></div>");
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log('autsch!');
@@ -40,17 +36,12 @@ $(document).ready(function() {
 
   /*Mouseover-Slideout-Effekt*/
  $(".break").mouseenter(function(){
-  
     /*Get breakname*/
-    //breakname = $(this).attr('id');  
+    //breakname = $(this).attr('id'); 
     breakname = "break1";
+    $('#'+breakname).css('background-color','#ec9634');
     get_images(breakname);
-    /*Get the id of the break*/
-    break_id = $(this).attr('id');
-    $('#'+break_id).css('background-color','#ec9634');
-    $('#'+break_id).append("<div id='slides'></div>");
-    $('#'+break_id).stop(true).animate({ left: '+=50', height: '100px' }, 500, function() {
-    $("#slides").append("<div class='slides_container'><div class='slide'><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8605_thumb.jpg' href='../img/break1/MG_8605.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8607_thumb.jpg' href='../img/break1/MG_8607.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8608_thumb.jpg' href='../img/break1/MG_8608.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8609_thumb.jpg' href='../img/break1/MG_8609.jpg'>Open #2</a></div></div><div class='slide'><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8612_thumb.jpg' href='../img/break1/MG_8612.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8613_thumb.jpg' href='../img/break1/MG_8613.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8615_thumb.jpg' href='../img/break1/MG_8615.jpg'>Open #2</a></div><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/MG_8616_thumb.jpg' href='../img/break1/MG_8616.jpg'>Open #2</a></div></div></div>");
+    $('#'+breakname).stop(true).animate({ left: '+=50', height: '100px' }, 500, function() {
     $(function(){
         $('#slides').slides({
           preload: true,
@@ -64,10 +55,31 @@ $(document).ready(function() {
 
  $(".break").mouseleave(function(){
     /*Get the id of the break*/
-    break_id = $(this).attr('id');
-    $('#'+break_id).css('background-color','#757776');
-    $('#'+break_id).stop(true).animate({ left: '+=50', height: '30px' }, 500, function() {
+    breakname = $(this).attr('id');
+    $('#'+breakname).css('background-color','#757776');
+    $('#'+breakname).stop(true).animate({ left: '+=50', height: '30px' }, 500, function() {
       $("#slides").remove();
     });
   });
+
+ $(".fancybox-media").fancybox({
+    openEffect  : 'none',
+    closeEffect : 'none',
+    helpers : {
+      media : {}
+    }
+  });
+
+  $(".fancybox-images").attr('rel', 'gallery')
+  $(".fancybox-images").fancybox({
+        helpers: {
+            thumbs: {
+                width  : 70,
+                height : 70,
+                source  : function(current) {
+                    return $(current.element).data('thumbnail');
+                }
+            }
+        }
+    });
 });

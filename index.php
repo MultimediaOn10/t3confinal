@@ -183,7 +183,7 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 				if($point['topic_id']=="7"){
 			        echo("
 			    <div class=\"row\">"); 
-			        echo("<div class=\"break span6 content-heading bordered-line ".$point['break_id']."\" id=\"".$point['break_id']."-".$point['0']."\">");
+			        echo("<div class=\"break span6 content-heading bordered-line ".$point['break_id']."\" id=\"".$point['break_id']."\">");
 			       		echo("<div class=\"left-floating heading-text\">");
 							echo($point['title']);
 			        	echo(" </div>
