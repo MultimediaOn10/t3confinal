@@ -10,6 +10,8 @@ $(document).ready(function() {
   /*Animation for the skip-button*/
   $(".skip").animate({ left: '+=50', height: '90px' }, 800, function() {
   });
+   $(".skip-start").animate({ left: '+=50', height: '450px' }, 800, function() {
+  });
 
   /*Hover-Effect for Tracks*/
   $(".track").mouseenter(function(){
@@ -368,15 +370,7 @@ $(document).ready(function() {
         $('.lower-legend-text').removeClass("legend-style-text");
     };
   });
-
-   $('#slides').slides({
-          preload: true,
-          generateNextPrev: true,
-          generatePagination: false,
-          play: 2500
-        });
 });
-
 
 
 

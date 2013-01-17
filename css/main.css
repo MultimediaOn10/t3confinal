@@ -402,7 +402,7 @@ html{
 	background: rgba(112, 111, 111, 0.6);
 	padding: 20px;
 	margin: 40px 60px 0px 5px;
-	width: 555px !important;
+	width: 200px !important;
 	height: 1px;
 }
 
@@ -533,8 +533,8 @@ a.prev {
    vertical-align: middle;
    text-align: center;
    position: relative;
-   margin-left: 50%;
-   margin-top: 20px;
+   margin-left: 25px;
+   margin-top: 453px;
 
    }
 #skip:hover {
@@ -543,11 +543,22 @@ a.prev {
    color: #ffffff;
    }
 
+.skip-start{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	color: #ffffff;
+	background: rgba(112, 111, 111, 0.6);
+	padding: 20px;
+	margin: 20px 20px 0px 5px;
+	width: 200px !important;
+	height: 1px;
+}
 /****************************/
 /***  video         *******/
 /****************************/ 
 
 .video iframe{
-	margin-left:35%; 
+	/*margin-left:35%; */
 	margin-top: 20px;
 }
