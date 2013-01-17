@@ -456,9 +456,13 @@ html{
 
 a.next {
 	display: block;
+	font-size: 0px;
 	float: right;
 	margin-top: -50px;
 	z-index: 1000;
+	background-image: url(../img/slider-right.gif) !important;
+	height: 30px;
+	width: 26px; 
 }
 
 a.prev {
@@ -466,6 +470,10 @@ a.prev {
 	float: left;
 	margin-top: -50px;
 	z-index: 1000;
+	font-size: 0px;
+	background-image: url(../img/slider-left.gif) !important;
+	height: 30px;
+	width: 26px;
 }
 
 
@@ -511,7 +519,7 @@ a.prev {
 /***  button style          *******/
 /****************************/
 #skip {
-   border-top: 1px solid #ec9a43;
+   /*border-top: 1px solid #ec9a43;*/
    background: #bf8d5b;
    background: -webkit-gradient(linear, left top, left bottom, from(#ec9a43), to(#bf8d5b));
    background: -webkit-linear-gradient(top, #ec9a43, #bf8d5b);
