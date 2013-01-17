@@ -1,4 +1,8 @@
-﻿<?php	if(!isset($_COOKIE["T3con"]) && !isset($_POST['skip'])){header("Location: php/intro.php");}
+﻿<?php	
+	if(!isset($_COOKIE["T3con"]) && !isset($_POST['skip'])){
+		echo ("<meta http-equiv='refresh' content='0; URL=php/intro.php'>");
+		//header("Location: php/intro.php");
+		}
     else{           
 
 			//Datenbank
