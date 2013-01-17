@@ -15,9 +15,37 @@ $(document).ready(function() {
 
   /*get the ids of the breaks*/
   var break_id;
+  var breakname;
+  /*Get the images*/
+
+    function get_images(breakname){
+      console.log(breakname);
+    $.ajax({
+        async: false,
+        url: "php/ajaxrequest_images.php",
+        data: { breakname:breakname, action: "img_array"},
+        type: "POST",
+        dataType: "json",
+        cache: false,
+        success: function (data, textStatus, XMLHttpRequest) {
+                console.log('success!');
+                for (var i = 0; i < data.items.length; i++) {
+                    //yay
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log('autsch!');
+            }
+    });
+  };
 
   /*Mouseover-Slideout-Effekt*/
  $(".break").mouseenter(function(){
+  
+    /*Get breakname*/
+    //breakname = $(this).attr('id');  
+    breakname = "break1";
+    get_images(breakname);
     /*Get the id of the break*/
     break_id = $(this).attr('id');
     $('#'+break_id).css('background-color','#ec9634');
@@ -44,6 +72,3 @@ $(document).ready(function() {
     });
   });
 });
-
-/*Get the images*/
-<a class="fancybox-images" data-thumbnail="../img/break1/MG_8605_thumb.jpg" href="../img/break1/MG_8605.jpg">Open #2</a>
