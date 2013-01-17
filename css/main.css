@@ -575,9 +575,19 @@ a.prev {
 /****************************/
 /***  Eastereggs      *******/
 /****************************/ 
-.impressum:hover{
-	cursor: pointer;
-}
 .impressum img{
 	position: absolute;
+}
+
+.fancy-text, .fancy-text2, .fancy-text3
+.impressum  {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.fancy-text:hover, .fancy-text2:hover, .fancy-text3:hover
+.impressum  {
+	text-decoration: none;
+	color: #ffffff;
+	cursor: pointer;
 }

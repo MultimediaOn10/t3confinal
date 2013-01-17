@@ -54,7 +54,7 @@
 		<div class="row">
 			<div class="span3 skip-start">
             	<p>Hi people, this is our page to give you a short overview about the T3Con 2012 in Cambodia. You are able to see here all talks of the conference by cklicking at the Traks. As well as you're able to get some impresiions of the spirit by clicking on at the breaks and other events. Have fun around.</p> 
-            	<p class="impressum">T3Con12 | Semersterarbeit im Kurs "Multimediales Informationsdesign" | Dozent: Dipl.-Des. Lothar B.Blum | created by: Stephan Fischer, Theresia Zorn, Liesa Burgey und Fabian Stein | DHBW Mosbach | Onlinemedien | 18.01.13</p>   
+            	<p><a class="fancy-text impressum" rel='group' href="#additional-content2">T3Con12 | Semersterarbeit im Kurs "Multimediales Informationsdesign" | Dozent: Dipl.-Des. Lothar B.Blum | created by: Stephan Fischer, Theresia Zorn, Liesa Burgey und Fabian Stein | DHBW Mosbach | Onlinemedien | 18.01.13</a></p>
         	</div> 
         	<div class="span8 video">
 					<iframe width="640" height="480" src="https://www.youtube.com/embed/tHFh3JzTxTg?autoplay=1" frameborder="1" allowfullscreen></iframe>	

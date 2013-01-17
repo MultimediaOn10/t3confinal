@@ -545,13 +545,24 @@ $(document).ready(function() {
         $('.lower-legend-text').removeClass("legend-style-text");
     };
   });
+
+  /*******************************/
+  /******** Easteregg ***********/
+  /*******************************/
+
+  $(".fancy-text").click(function(){
+     $(".fancy-text").fancybox({
+        openEffect  : 'none',
+        closeEffect : 'none',
+        arrows     : false,
+        afterLoad   : function() {
+          this.inner.prepend('<h3 class="additional-content">'+'The Designer'+'</h3>');
+          this.content = '<div class="additional-content2"><img src="../img/Foto1.jpg"/></div>';
+          console.log('bla');
+        }
+      });
+  });
+
 });
 
 
-/*******************************/
-/******** Easteregg ***********/
-/*******************************/
-
-$(".impressum").click(function(){
-  $(document).append("<div class='eastereggs><img src='Foto1 (2).jpg'/></div>'");
-});
