@@ -93,7 +93,7 @@ $(document).ready(function() {
     Animate_Bubble_right();
   });
 
-    $("#11").click(function(){
+  $("#11").click(function(){
     trackID = $('#11').attr('id');
     disappear_bubbles();
     get_contents(trackID);
@@ -108,6 +108,141 @@ $(document).ready(function() {
     get_contents(trackID);
     bubble1_drawing(track_title); 
     $("#bubble-1").css('margin-top','400px');
+    Animate_Bubble_right();
+  });
+
+  $("#14").click(function(){
+    trackID = $('#14').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble2_drawing(track_title); 
+    $("#bubble-2").css('margin-top','510px');
+    Animate_Bubble_left();
+  });
+
+  $("#15").click(function(){
+    trackID = $('#15').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','510px');
+    Animate_Bubble_right();
+  });
+
+  $("#16").click(function(){
+    trackID = $('#16').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble2_drawing(track_title); 
+    $("#bubble-2").css('margin-top','580px');
+    Animate_Bubble_left();
+  });
+
+  $("#17").click(function(){
+    trackID = $('#17').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','580px');
+    Animate_Bubble_right();
+  });
+
+  $("#20").click(function(){
+    trackID = $('#20').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','30px');
+    Animate_Bubble_right();
+  });
+
+   $("#21").click(function(){
+    trackID = $('#21').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble2_drawing(track_title); 
+    $("#bubble-2").css('margin-top','90px');
+    Animate_Bubble_left();
+  });
+
+  $("#22").click(function(){
+    trackID = $('#22').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','90px');
+    Animate_Bubble_right();
+  });
+
+  $("#23").click(function(){
+    trackID = $('#23').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble2_drawing(track_title); 
+    $("#bubble-2").css('margin-top','160px');
+    Animate_Bubble_left();
+  });
+
+  $("#24").click(function(){
+    trackID = $('#24').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','160px');
+    Animate_Bubble_right();
+  });
+
+  $("#26").click(function(){
+    trackID = $('#26').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble2_drawing(track_title); 
+    $("#bubble-2").css('margin-top','280px');
+    Animate_Bubble_left();
+  });
+
+  $("#27").click(function(){
+    trackID = $('#27').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','280px');
+    Animate_Bubble_right();
+  });
+
+  $("#29").click(function(){
+    trackID = $('#29').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble2_drawing(track_title); 
+    $("#bubble-2").css('margin-top','390px');
+    Animate_Bubble_left();
+  });
+
+  $("#31").click(function(){
+    trackID = $('#31').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','390px');
+    Animate_Bubble_right();
+  });
+
+  $("#30").click(function(){
+    trackID = $('#30').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble2_drawing(track_title); 
+    $("#bubble-2").css('margin-top','460px');
+    Animate_Bubble_left();
+  });
+
+  $("#34").click(function(){
+    trackID = $('#34').attr('id');
+    disappear_bubbles();
+    get_contents(trackID);
+    bubble1_drawing(track_title); 
+    $("#bubble-1").css('margin-top','460px');
     Animate_Bubble_right();
   });
 
