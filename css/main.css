@@ -302,7 +302,7 @@ html{
 .bubble-content {
 	background: #ffffff;
 	color: #ffffff;
-	height: 150px;
+	height: 110px;
 	display: none;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
@@ -569,4 +569,15 @@ a.prev {
 .video iframe{
 	/*margin-left:35%; */
 	margin-top: 20px;
+}
+
+
+/****************************/
+/***  Eastereggs      *******/
+/****************************/ 
+.impressum:hover{
+	cursor: pointer;
+}
+.impressum img{
+	position: absolute;
 }
