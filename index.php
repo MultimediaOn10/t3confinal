@@ -1,5 +1,5 @@
 ﻿<?php	
-	if(!isset($_COOKIE['t3con']) && !isset($_POST['skip'])){
+	if(!isset($_COOKIE['t3con']) && !isset($_POST['intro'])){
 		echo ("<meta http-equiv='refresh' content='0; URL=php/intro.php'>");
 		//header("Location: php/intro.php");
 		}
@@ -11,18 +11,10 @@
 			mysql_select_db($mysqldb, $connection);	
 			
 			//Cookie auslesen und setzen
-           if (isset($_COOKIE['t3con'])){
-               $skip=$_COOKIE['t3con'];
-           }
-            elseif(isset($_POST['skip'])){
-                 setcookie('t3con', 'skip');//, time()+10000);
-                 $skip="skip";
+           if(isset($_POST['intro'])){
+                 setcookie('t3con', 'intro', time()+10000);
             }
-            else{
-                setcookie('t3con', 'watched');//, time()+10000); 
-                $skip="watched";
-            }
-		echo ($_COOKIE['t3con']);
+	//	echo ($_COOKIE['t3con']);
 
 //Conferenceinformation
 $sql = "SELECT * from conferences where `id`='1'";
@@ -101,18 +93,6 @@ $sql_pp="Select * from programpoints right join topics on programpoints.topic_id
 				<a href="http://www.typo3.org"><img src="img/t3-logo.png"/></a>
 			</div>
 		</div>
-
-		<?php
-		if($skip=="skip"){
-		echo("
-		<div class=\"row\">
-			<div class=\"span3\">&nbsp;</div>
-			<div class=\"span8 skip\">
-            	<p>Hi people, this is our page to give you a short overview about the T3Con 2012 in Cambodia. You are able to see here all talks of the conference by cklicking at the Traks. As well as you're able to get some impresiions of the spirit by clicking on at the breaks and other events. Have fun around.</p>    
-        	</div>                    
-		</div>");
-		}
-		?>
 		<div class="row">
 			<div class="span3">&nbsp;</div>
 			<div class="span8 daytext">
