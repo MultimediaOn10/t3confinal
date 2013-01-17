@@ -316,18 +316,21 @@ $(document).ready(function() {
           $('.upper-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
             $('.upper-legend-text').text("Text1");
             $('.upper-legend-text').css('background-color','#ffffff');
+            $('.upper-legend-text').addClass("legend-style-text");
           });
         break;
         case 'legend-purple': 
           $('.upper-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
             $('.upper-legend-text').text("Text2");
             $('.upper-legend-text').css('background-color','#ffffff');
+            $('.upper-legend-text').addClass("legend-style-text");
           });
         break;
         case 'legend-blue': 
           $('.upper-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
             $('.upper-legend-text').text("Text3");
             $('.upper-legend-text').css('background-color','#ffffff');
+            $('.upper-legend-text').addClass("legend-style-text");
           });
         break;
         case 'legend-green':  
@@ -335,18 +338,21 @@ $(document).ready(function() {
             console.log("hallo");
             $('.lower-legend-text').text("Text4");
             $('.lower-legend-text').css('background-color','#ffffff');
+            $('.lower-legend-text').addClass("legend-style-text");
           });
         break;
         case 'legend-orange':  
           $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
             $('.lower-legend-text').text("Text5");
             $('.lower-legend-text').css('background-color','#ffffff');
+            $('.lower-legend-text').addClass("legend-style-text");
           });
         break;
         case 'legend-red':  
           $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 300, function() {
             $('.lower-legend-text').text("Text6");
             $('.lower-legend-text').css('background-color','#ffffff');
+            $('.lower-legend-text').addClass("legend-style-text");
           });
         break;
       }
@@ -357,6 +363,8 @@ $(document).ready(function() {
         close_legends();   
         $('.lower-legend-text').css('background-color','');
         $('.upper-legend-text').css('background-color','');
+        $('.upper-legend-text').removeClass("legend-style-text");
+        $('.lower-legend-text').removeClass("legend-style-text");
     };
   });
 });
