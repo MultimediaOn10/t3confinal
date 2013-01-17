@@ -22,7 +22,7 @@
                 setcookie('t3con', 'watched');//, time()+10000); 
                 $skip="watched";
             }
-		echo ($_COOKIE['t3con']);
+	//	echo ($_COOKIE['t3con']);
 
 //Conferenceinformation
 $sql = "SELECT * from conferences where `id`='1'";
