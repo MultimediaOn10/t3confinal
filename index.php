@@ -1,10 +1,6 @@
 ﻿<?php
-
-
-
-
-	if (!isset($_COOKIE["T3con"]) && !isset($_POST['skip'])){
-			header("Location: php/intro.php"); 	
+	if(!isset($_COOKIE["T3con"]) && !isset($_POST['skip'])){
+		header("Location: php/intro.php"); 	
 	}
     else{           
 
