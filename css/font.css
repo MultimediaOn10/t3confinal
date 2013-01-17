@@ -86,3 +86,10 @@
 .fancybox-button{
 	color: #ffffff;
 }
+p.impressum {
+	font-family: Helvetica;
+	font-weight: lighter;
+	color: #999999;
+	font-size: 12px;
+	margin-top: 120px;
+}
