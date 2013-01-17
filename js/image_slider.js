@@ -11,7 +11,7 @@ $(document).ready(function() {
   var images_links3;
  
   /*Get the images*/
-    function get_images(breakname){
+    function get_images(breakname, images_links1, images_links2, images_links3){
     $.ajax({
         async: false,
         url: "php/ajaxrequest_images.php",
@@ -30,12 +30,9 @@ $(document).ready(function() {
                 for (var i = 8; i < 12; i++) {
                   images_links3 += data.items[i];
                 }
-                //images_links1 = images_links1.replace('undefined','');
-                //images_links2 = images_links2.replace('undefined','');
-                //images_links3 = images_links3.replace('undefined','');
-                console.log(images_links1);
-                console.log(images_links2);
-                console.log(images_links3);
+                images_links1 = images_links1.replace('undefined','');
+                images_links2 = images_links2.replace('undefined','');
+                images_links3 = images_links3.replace('undefined','');
                 $('#'+breakname).append("<div id='slides'></div>");
                 $("#slides").append("<div class='slides_container'><div class='slide'>"+images_links1+"</div><div class='slide'>"+images_links2+"</div><div class='slide'>"+images_links3+"</div></div>");
                  $(function(){
@@ -57,23 +54,22 @@ $(document).ready(function() {
   $(".break").mouseenter(function(){
     /*Get breakname*/
     breakname = $(this).attr('id'); 
-    console.log(breakname);
     $('#'+breakname).css('background-color','#ec9634');
-    get_images(breakname);
+    get_images(breakname, images_links1, images_links2, images_links3);
     $('#'+breakname).stop(true).animate({ left: '+=50', height: '100px' }, 500, function() {
     });
   });
 
-  $(".break").mouseleave(function(){
+  $(".break").mouseleave(function(images_links1, images_links2, images_links3, breakname){
     /*Get the id of the break*/
     breakname = $(this).attr('id');
     $('#'+breakname).css('background-color','#757776');
     $('#'+breakname).stop(true).animate({ left: '+=50', height: '30px' }, 500, function() {
     $("#slides").remove();
-    breakname.empty();
-    images_links1.empty();
-    images_links2.empty();
-    images_links3.empty();
+    $(breakname).empty();
+    $(images_links1).empty();
+    $(images_links2).empty();
+    $(images_links3).empty();
     });
   });
 
