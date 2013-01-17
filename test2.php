@@ -31,7 +31,7 @@
 			
 			<div class="slide">
 				<div class="item">
-					Item One
+					<a class='fancybox-images' data-thumbnail='../img/break1/_MG_8607_thumb.jpg' href='../img/break1/_MG_8607.jpg'>".$datei."</a>";
 				</div>
 				<div class="item">
 					Item Two

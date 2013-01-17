@@ -19,7 +19,6 @@ $(document).ready(function() {
   /*Get the images*/
 
     function get_images(breakname){
-      console.log(breakname);
     $.ajax({
         async: false,
         url: "php/ajaxrequest_images.php",
@@ -29,8 +28,8 @@ $(document).ready(function() {
         cache: false,
         success: function (data, textStatus, XMLHttpRequest) {
                 console.log('success!');
-                for (var i = 0; i < data.items.length; i++) {
-                    //yay
+                  for (var i = 0; i < data.items.length; i++) {
+                    console.log(data.items[i].items);
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
