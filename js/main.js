@@ -315,21 +315,21 @@ $(document).ready(function() {
         case 'legend-yellow': 
           $('.upper-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
             $('.upper-legend-text').text("Text1");
-            $('.upper-legend-text').css('background-color','#ffffff');
+            $('.upper-legend-text').css('background-color','#F4CC3E');
             $('.upper-legend-text').addClass("legend-style-text");
           });
         break;
         case 'legend-purple': 
           $('.upper-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
             $('.upper-legend-text').text("Text2");
-            $('.upper-legend-text').css('background-color','#ffffff');
+            $('.upper-legend-text').css('background-color','#856AA2');
             $('.upper-legend-text').addClass("legend-style-text");
           });
         break;
         case 'legend-blue': 
           $('.upper-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
             $('.upper-legend-text').text("Text3");
-            $('.upper-legend-text').css('background-color','#ffffff');
+            $('.upper-legend-text').css('background-color','#265D9C');
             $('.upper-legend-text').addClass("legend-style-text");
           });
         break;
@@ -337,21 +337,21 @@ $(document).ready(function() {
           $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
             console.log("hallo");
             $('.lower-legend-text').text("Text4");
-            $('.lower-legend-text').css('background-color','#ffffff');
+            $('.lower-legend-text').css('background-color','#6F9A37');
             $('.lower-legend-text').addClass("legend-style-text");
           });
         break;
         case 'legend-orange':  
           $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 500, function() {
             $('.lower-legend-text').text("Text5");
-            $('.lower-legend-text').css('background-color','#ffffff');
+            $('.lower-legend-text').css('background-color','#EC9A43');
             $('.lower-legend-text').addClass("legend-style-text");
           });
         break;
         case 'legend-red':  
           $('.lower-legend-text').stop(true).animate({ left: '+=50', height: '50px' }, 300, function() {
             $('.lower-legend-text').text("Text6");
-            $('.lower-legend-text').css('background-color','#ffffff');
+            $('.lower-legend-text').css('background-color','#C13829');
             $('.lower-legend-text').addClass("legend-style-text");
           });
         break;
