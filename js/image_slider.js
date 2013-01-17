@@ -24,17 +24,14 @@ $(document).ready(function() {
                 for (var i = 0; i < 4; i++) {
                   images_links1 += data.items[i];
                 }
-                for (var i = 5; i < 8; i++) {
+                for (var i = 5; i < 9; i++) {
                   images_links2 += data.items[i];
-                }
-                for (var i = 8; i < 12; i++) {
-                  images_links3 += data.items[i];
                 }
                 images_links1 = images_links1.replace('undefined','');
                 images_links2 = images_links2.replace('undefined','');
-                images_links3 = images_links3.replace('undefined','');
+
                 $('#'+breakname).append("<div id='slides'></div>");
-                $("#slides").append("<div class='slides_container'><div class='slide'>"+images_links1+"</div><div class='slide'>"+images_links2+"</div><div class='slide'>"+images_links3+"</div></div>");
+                $("#slides").append("<div class='slides_container'><div class='slide'>"+images_links1+"</div><div class='slide'>"+images_links2+"</div></div>");
                  $(function(){
                     $('#slides').slides({
                       preload: true,
