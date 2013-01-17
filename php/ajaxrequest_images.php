@@ -9,7 +9,7 @@ foreach ($alledateien as $datei) { // Ausgabeschleife
 	
 		if (strpos($datei, "thumb")==false && $datei != "." && $datei != ".."){
 			$datei_blanko=str_replace(".jpg","",$datei);
-			$img="<div class='slides_container'><div class='slide'><div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/".$datei_blanko."\"\"_thumb.jpg' href='../img/break1/".$datei_blanko.".jpg'>".$datei."</a></div></div></div>";
+			$img="<div class='item'><a class='fancybox-images' data-thumbnail='../img/break1/".$datei_blanko."\"\"_thumb.jpg' href='../img/break1/".$datei_blanko.".jpg'>".$datei."</a></div>";
 		$img_array[]=$img;
 		}		
 	
