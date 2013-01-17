@@ -159,13 +159,15 @@ $(document).ready(function() {
       dataType: "json",
       cache: false,
       success: function (data, textStatus, XMLHttpRequest) {
-                console.log('success!');
+                console.log('success! I got the data for the bubble');
                 for (var i = 0; i < data.items.length; i++) {
                     var description_text = data.items[i].note;
                     var videolink = data.items[i].url;
+                    console.log(videolink);
                 }
                 short_description = "<img src='http://img.youtube.com/vi/"+videolink+"/1.jpg'/><a class='video-link fancybox-media' rel='group' href='http://www.youtube.com/watch?v="+videolink+"'>link</a>";
-                add_content = "<div class='additional-content'>"+description_text+"</div>";   
+                add_content = "<div class='additional-content'>"+description_text+"</div>";
+                console.log(short_description);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log('autsch!');
@@ -288,6 +290,7 @@ $(document).ready(function() {
   function disappear_bubbles(){
     $("#bubble-1").fadeOut('slow', function() {
       showOrHide = false;
+      $(videolink).empty();
     });
     $("#bubble-2").fadeOut('slow', function() {
       showOrHide = false;
