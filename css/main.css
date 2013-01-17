@@ -416,6 +416,7 @@ html{
 	display: block;
 	float: right;
 	margin: 10px 10px 0 0;
+	font-size: 0px;
 }
 
 .slides_container {
@@ -435,6 +436,7 @@ html{
 	display:block;
 	margin-left: 30px;
 	z-index: 100;
+	font-size: 0px;
 }
 		
 .fancybox-images {
@@ -453,6 +455,8 @@ html{
 	padding:0;
 	z-index: 100;
 }
+
+
 
 a.next {
 	display: block;
