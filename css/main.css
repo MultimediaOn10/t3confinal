@@ -570,3 +570,14 @@ a.prev {
 	/*margin-left:35%; */
 	margin-top: 20px;
 }
+
+
+/****************************/
+/***  Eastereggs      *******/
+/****************************/ 
+.impressum:hover{
+	cursor: pointer;
+}
+.impressum img{
+	position: absolute;
+}
