@@ -368,7 +368,15 @@ $(document).ready(function() {
         $('.lower-legend-text').removeClass("legend-style-text");
     };
   });
+
+   $('#slides').slides({
+          preload: true,
+          generateNextPrev: true,
+          generatePagination: false,
+          play: 2500
+        });
 });
+
 
 
 
