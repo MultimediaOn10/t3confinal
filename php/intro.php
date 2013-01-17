@@ -59,7 +59,7 @@
 		</div>
 		<div class="row">
 				<div class="span8 video">
-					<iframe width="640" height="480" src="https://www.youtube.com/embed/tHFh3JzTxTg" frameborder="1" allowfullscreen></iframe>	
+					<iframe width="640" height="480" src="https://www.youtube.com/embed/tHFh3JzTxTg?autoplay=1" frameborder="1" allowfullscreen></iframe>	
 				</div>
 		</div>
 			<div class="row">
