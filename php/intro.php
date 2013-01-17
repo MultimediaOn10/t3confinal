@@ -61,7 +61,7 @@
 			<div class="span3">
 					<form action="../index.php" method="post">
 					 	 <input type="hidden" id="skip" name="skip" value="skip">
-					 	 <input type="submit" value="Skip Intro" id="skip">           
+					 	 <input type="submit" value="Go to website" id="skip">           
 					</form>
 				</div>                  
 		</div>
