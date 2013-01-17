@@ -15,11 +15,11 @@
                $skip=$_COOKIE['t3con'];
            }
             elseif(isset($_POST['skip'])){
-                 setcookie('t3con', 'skip', time()+10000);
+                 setcookie('t3con', 'skip');//, time()+10000);
                  $skip="skip";
             }
             else{
-                setcookie('t3con', 'watched', time()+10000); 
+                setcookie('t3con', 'watched');//, time()+10000); 
                 $skip="watched";
             }
 		echo ($_COOKIE['t3con']);
