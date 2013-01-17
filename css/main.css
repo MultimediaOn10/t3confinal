@@ -414,17 +414,19 @@ html{
 	width: 390px;
 	height: 70px;
 	display: block;
-	/*float: right;*/
+	float: right;
 	margin: 10px 10px 0 0;
 }
 
 .slides_container {
 	width:390px;
 	display:none;
+	z-index: 100;
 }
 
 .slides_control {
 	width: 400px;
+	z-index: 100;
 }
 
 .slides_container div.slide {
@@ -432,6 +434,7 @@ html{
 	height:70px;
 	display:block;
 	margin-left: 30px;
+	z-index: 100;
 }
 		
 .fancybox-images {
@@ -441,24 +444,28 @@ html{
 	margin:0 5px;
 	background:#efefef;
 	font-size: 0px;
+	z-index: 100;
 }
 		
 .pagination {
 	list-style:none;
 	margin:0;
 	padding:0;
+	z-index: 100;
 }
 
 a.next {
 	display: block;
 	float: right;
 	margin-top: -50px;
+	z-index: 1000;
 }
 
 a.prev {
 	display: block;
 	float: left;
 	margin-top: -50px;
+	z-index: 1000;
 }
 
 
