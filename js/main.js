@@ -21,6 +21,12 @@ $(document).ready(function() {
   $(".track").mouseleave(function(){
     $(this).css('background', '#cacccb');
   });
+  $(".keynote-track").mouseenter(function(){
+    $(this).css('background', '#9d9f9e');
+  });
+  $(".keynote-track").mouseleave(function(){
+    $(this).css('background', '#cacccb');
+  });
 
   /* Placing Bubbles to the tracks */
   
