@@ -500,3 +500,47 @@ a.prev {
 	line-height: 35pt;
 }
 
+/****************************/
+/***  button style          *******/
+/****************************/
+#skip {
+   border-top: 1px solid #ec9a43;
+   background: #bf8d5b;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ec9a43), to(#bf8d5b));
+   background: -webkit-linear-gradient(top, #ec9a43, #bf8d5b);
+   background: -moz-linear-gradient(top, #ec9a43, #bf8d5b);
+   background: -ms-linear-gradient(top, #ec9a43, #bf8d5b);
+   background: -o-linear-gradient(top, #ec9a43, #bf8d5b);
+   padding: 14.5px 29px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 18px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   text-align: center;
+   position: relative;
+   margin-left: 50%;
+   margin-top: 20px;
+
+   }
+#skip:hover {
+   border-top-color: #e67707;
+   background: #e67707;
+   color: #ffffff;
+   }
+
+/****************************/
+/***  video         *******/
+/****************************/ 
+
+.video iframe{
+	margin-left:35%; 
+	margin-top: 20px;
+}
