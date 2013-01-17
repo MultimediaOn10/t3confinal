@@ -556,9 +556,8 @@ $(document).ready(function() {
         closeEffect : 'none',
         arrows     : false,
         afterLoad   : function() {
-          this.inner.prepend('<h3 class="additional-content">'+'The Designer'+'</h3>');
+          this.inner.prepend('<h3 class="additional-content">'+'The Team'+'</h3>');
           this.content = '<div class="additional-content2"><img src="../img/Foto1.jpg"/></div>';
-          console.log('bla');
         }
       });
   });

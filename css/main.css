@@ -575,19 +575,23 @@ a.prev {
 /****************************/
 /***  Eastereggs      *******/
 /****************************/ 
-.impressum img{
-	position: absolute;
+a.fancy-text {
+	text-decoration: none;
+	font-family: Helvetica;
+	font-weight: lighter;
+	font-size: 12px;
+	margin-top: 120px;
+	display: block;
 }
 
-.fancy-text, .fancy-text2, .fancy-text3
-.impressum  {
-	text-decoration: none;
-	color: #ffffff;
+
+a.impressum {
+	color: #999999;
 }
 
-.fancy-text:hover, .fancy-text2:hover, .fancy-text3:hover
-.impressum  {
+a.fancy-text:hover,
+a.impressum  {
 	text-decoration: none;
-	color: #ffffff;
+	color: #999999;
 	cursor: pointer;
 }
