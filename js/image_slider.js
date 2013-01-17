@@ -22,6 +22,9 @@ $(document).ready(function() {
                 for (var i = 0; i < data.items.length; i++) {
                   images_links = data.items[i];
                 }
+                console.log(images_links);
+                $('#'+breakname).append("<div id='slides'></div>");
+                $("#slides").append("<div class='slides_container'><div class='slide'>"+images_links+"</div></div>");
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log('autsch!');
@@ -31,17 +34,12 @@ $(document).ready(function() {
 
   /*Mouseover-Slideout-Effekt*/
  $(".break").mouseenter(function(){
-    console.log(images_links);
     /*Get breakname*/
-    //breakname = $(this).attr('id');  
+    //breakname = $(this).attr('id'); 
     breakname = "break1";
+    $('#'+breakname).css('background-color','#ec9634');
     get_images(breakname);
-    /*Get the id of the break*/
-    break_id = $(this).attr('id');
-    $('#'+break_id).css('background-color','#ec9634');
-    $('#'+break_id).append("<div id='slides'></div>");
-    $('#'+break_id).stop(true).animate({ left: '+=50', height: '100px' }, 500, function() {
-    $("#slides").append("<div class='slides_container'><div class='slide'>"+images_links+"</div></div>");
+    $('#'+breakname).stop(true).animate({ left: '+=50', height: '100px' }, 500, function() {
     $(function(){
         $('#slides').slides({
           preload: true,
@@ -55,9 +53,9 @@ $(document).ready(function() {
 
  $(".break").mouseleave(function(){
     /*Get the id of the break*/
-    break_id = $(this).attr('id');
-    $('#'+break_id).css('background-color','#757776');
-    $('#'+break_id).stop(true).animate({ left: '+=50', height: '30px' }, 500, function() {
+    breakname = $(this).attr('id');
+    $('#'+breakname).css('background-color','#757776');
+    $('#'+breakname).stop(true).animate({ left: '+=50', height: '30px' }, 500, function() {
       $("#slides").remove();
     });
   });
