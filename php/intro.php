@@ -57,7 +57,7 @@
             	<p class="impressum">T3Con12 | Semersterarbeit im Kurs "Multimediales Informationsdesign" | Dozent: Dipl.-Des. Lothar B.Blum | created by: Stephan Fischer, Theresia Zorn, Liesa Burgey und Fabian Stein | DHBW Mosbach | Onlinemedien | 18.01.13</p>   
         	</div> 
         	<div class="span8 video">
-					<iframe width="640" height="480" src="https://www.youtube.com/embed/tHFh3JzTxTg?autoplay=1" frameborder="1" allowfullscreen></iframe>	
+					<iframe width="640" height="480" src="http://www.youtube.com/embed/5pKOEjGa20I?autoplay=1" frameborder="1" allowfullscreen></iframe>	
 				</div> 
 			<div class="span3">
 					<form action="../index.php" method="post">
